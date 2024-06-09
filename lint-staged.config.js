@@ -99,12 +99,12 @@ module.exports = {
     return [
       `prettier --with-node-modules --ignore-path .prettierignore --write ${escapedFileNames}`,
       `prettier --with-node-modules --ignore-path .prettierignore --check ${escapedFileNames}`,
+      `eslint --no-ignore --max-warnings=0 ${eslintFileNames}`,
+      // `eslint --no-ignore --max-warnings=0 --fix ${eslintFileNames}`, // tidak perlu di FIX, kalo di FIX otomatis nanti tidak tau apa yang dirubah sama eslint
       `tsc --noEmit ${getTscFlags()} ${escapedFileNames}`,
       // `tsc --noEmit ${escapedFileNames}`,
       // `npx tsc-files --noEmit ${escapedFileNames}`,
       // 'bash -c tsc --noEmit --skipLibCheck',
-      `eslint --no-ignore --max-warnings=0 ${eslintFileNames}`,
-      // `eslint --no-ignore --max-warnings=0 --fix ${eslintFileNames}`, // tidak perlu di FIX, kalo di FIX otomatis nanti tidak tau apa yang dirubah sama eslint
     ];
   },
   /**
@@ -117,12 +117,12 @@ module.exports = {
     return [
       `prettier --with-node-modules --ignore-path .prettierignore --write ${escapedFileNames}`,
       `prettier --with-node-modules --ignore-path .prettierignore --check ${escapedFileNames}`,
+      `eslint --no-ignore --max-warnings=0 ${eslintFileNames}`,
+      // `eslint --no-ignore --max-warnings=0 --fix ${eslintFileNames}`, // tidak perlu di FIX, kalo di FIX otomatis nanti tidak tau apa yang dirubah sama eslint
       `tsc --noEmit ${getTscFlags()} ${escapedFileNames}`,
       // `tsc --noEmit ${escapedFileNames}`,
       // `npx tsc-files --noEmit ${escapedFileNames}`,
       // 'bash -c tsc --noEmit --skipLibCheck',
-      `eslint --no-ignore --max-warnings=0 ${eslintFileNames}`,
-      // `eslint --no-ignore --max-warnings=0 --fix ${eslintFileNames}`, // tidak perlu di FIX, kalo di FIX otomatis nanti tidak tau apa yang dirubah sama eslint
     ];
   },
   '*.{json,md,mdx,css,scss,sass}': ['prettier --write'],

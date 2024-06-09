@@ -11,11 +11,11 @@ const eslint = new ESLint();
  * @returns {string[]}
  */
 function escape(filenames) {
-  if (process.platform === 'win32') {
-    return filenames;
-  }
+    if (process.platform === 'win32') {
+        return filenames;
+    }
 
-  return filenames.map((filename) => quote([filename]).replace(/\\@/g, '@'));
+    return filenames.map((filename) => quote([filename]).replace(/\\@/g, '@'));
 }
 
 /**
@@ -23,23 +23,23 @@ function escape(filenames) {
  *  @returns {Promise<string>}
  */
 async function getEslintFileNames(filenames) {
-  // eslint-disable-next-line no-undef
-  const _eslintFileNames = await Promise.all(
-    filenames.map(async (filename) => {
-      const ignored = await eslint.isPathIgnored(filename);
-      return ignored ? null : filename;
-    })
-  );
+    // eslint-disable-next-line no-undef
+    const _eslintFileNames = await Promise.all(
+        filenames.map(async (filename) => {
+            const ignored = await eslint.isPathIgnored(filename);
+            return ignored ? null : filename;
+        })
+    );
 
-  const eslintFileNames = _eslintFileNames
-    .filter((filename) => filename !== null)
-    .map((filename) => {
-      // eslint-disable-next-line no-useless-escape
-      return `\"${filename}\"`;
-    })
-    .join(' ');
+    const eslintFileNames = _eslintFileNames
+        .filter((filename) => filename !== null)
+        .map((filename) => {
+            // eslint-disable-next-line no-useless-escape
+            return `\"${filename}\"`;
+        })
+        .join(' ');
 
-  return eslintFileNames;
+    return eslintFileNames;
 }
 
 /**
@@ -48,82 +48,82 @@ async function getEslintFileNames(filenames) {
  */
 
 function getEscapedFileNames(filenames) {
-  const escapedFileNames = escape(filenames)
-    // eslint-disable-next-line no-undef, no-useless-escape
-    .map((f) => `\"${f}\"`)
-    .join(' ');
+    const escapedFileNames = escape(filenames)
+        // eslint-disable-next-line no-undef, no-useless-escape
+        .map((f) => `\"${f}\"`)
+        .join(' ');
 
-  return escapedFileNames;
+    return escapedFileNames;
 }
 
 const getTscFlags = () => {
-  const compilerOptions = {
-    target: 'es5',
-    lib: ['dom', 'dom.iterable', 'esnext'],
-    allowJs: true,
-    skipLibCheck: true,
-    strict: true,
-    noEmit: true,
-    esModuleInterop: true,
-    module: 'esnext',
-    moduleResolution: 'bundler',
-    resolveJsonModule: true,
-    isolatedModules: true,
-    jsx: 'preserve',
-    // incremental: true,
-  };
+    const compilerOptions = {
+        target: 'es5',
+        lib: ['dom', 'dom.iterable', 'esnext'],
+        allowJs: true,
+        skipLibCheck: true,
+        strict: true,
+        noEmit: true,
+        esModuleInterop: true,
+        module: 'esnext',
+        moduleResolution: 'bundler',
+        resolveJsonModule: true,
+        isolatedModules: true,
+        jsx: 'preserve',
+        // incremental: true,
+    };
 
-  return Object.keys(compilerOptions)
-    .flatMap((key) => {
-      const value = compilerOptions[key];
-      if (Array.isArray(value)) {
-        return `${key} ${value.join(',')}`;
-      }
-      if (typeof value === 'string') {
-        return `${key} ${value}`;
-      }
-      return key;
-    })
-    .map((key) => `--${key}`)
-    .join(' ');
+    return Object.keys(compilerOptions)
+        .flatMap((key) => {
+            const value = compilerOptions[key];
+            if (Array.isArray(value)) {
+                return `${key} ${value.join(',')}`;
+            }
+            if (typeof value === 'string') {
+                return `${key} ${value}`;
+            }
+            return key;
+        })
+        .map((key) => `--${key}`)
+        .join(' ');
 };
 
 module.exports = {
-  /**
-   * @param {string[]} filenames
-   * _@returns {string[]}
-   */
-  '*.{js,jsx}': async (filenames) => {
-    const escapedFileNames = getEscapedFileNames(filenames);
-    const eslintFileNames = await getEslintFileNames(filenames);
-    return [
-      `prettier --with-node-modules --ignore-path .prettierignore --write ${escapedFileNames}`,
-      `prettier --with-node-modules --ignore-path .prettierignore --check ${escapedFileNames}`,
-      `eslint --no-ignore --max-warnings=0 ${eslintFileNames}`,
-      // `eslint --no-ignore --max-warnings=0 --fix ${eslintFileNames}`, // tidak perlu di FIX, kalo di FIX otomatis nanti tidak tau apa yang dirubah sama eslint
-      `tsc --noEmit ${getTscFlags()} ${escapedFileNames}`,
-      // `tsc --noEmit ${escapedFileNames}`,
-      // `npx tsc-files --noEmit ${escapedFileNames}`,
-      // 'bash -c tsc --noEmit --skipLibCheck',
-    ];
-  },
-  /**
-   * @param {string[]} filenames
-   * _@returns {string[]}
-   */
-  '*.{ts,tsx}': async (filenames) => {
-    const escapedFileNames = getEscapedFileNames(filenames);
-    const eslintFileNames = await getEslintFileNames(filenames);
-    return [
-      `prettier --with-node-modules --ignore-path .prettierignore --write ${escapedFileNames}`,
-      `prettier --with-node-modules --ignore-path .prettierignore --check ${escapedFileNames}`,
-      `eslint --no-ignore --max-warnings=0 ${eslintFileNames}`,
-      // `eslint --no-ignore --max-warnings=0 --fix ${eslintFileNames}`, // tidak perlu di FIX, kalo di FIX otomatis nanti tidak tau apa yang dirubah sama eslint
-      `tsc --noEmit ${getTscFlags()} ${escapedFileNames}`,
-      // `tsc --noEmit ${escapedFileNames}`,
-      // `npx tsc-files --noEmit ${escapedFileNames}`,
-      // 'bash -c tsc --noEmit --skipLibCheck',
-    ];
-  },
-  '*.{json,md,mdx,css,scss,sass}': ['prettier --write'],
+    /**
+     * @param {string[]} filenames
+     * _@returns {string[]}
+     */
+    '*.{js,jsx}': async (filenames) => {
+        const escapedFileNames = getEscapedFileNames(filenames);
+        const eslintFileNames = await getEslintFileNames(filenames);
+        return [
+            `prettier --with-node-modules --ignore-path .prettierignore --write ${escapedFileNames}`,
+            `prettier --with-node-modules --ignore-path .prettierignore --check ${escapedFileNames}`,
+            `eslint --no-ignore --max-warnings=0 ${eslintFileNames}`,
+            // `eslint --no-ignore --max-warnings=0 --fix ${eslintFileNames}`, // tidak perlu di FIX, kalo di FIX otomatis nanti tidak tau apa yang dirubah sama eslint
+            `tsc --noEmit ${getTscFlags()} ${escapedFileNames}`,
+            // `tsc --noEmit ${escapedFileNames}`,
+            // `npx tsc-files --noEmit ${escapedFileNames}`,
+            // 'bash -c tsc --noEmit --skipLibCheck',
+        ];
+    },
+    /**
+     * @param {string[]} filenames
+     * _@returns {string[]}
+     */
+    '*.{ts,tsx}': async (filenames) => {
+        const escapedFileNames = getEscapedFileNames(filenames);
+        const eslintFileNames = await getEslintFileNames(filenames);
+        return [
+            `prettier --with-node-modules --ignore-path .prettierignore --write ${escapedFileNames}`,
+            `prettier --with-node-modules --ignore-path .prettierignore --check ${escapedFileNames}`,
+            `eslint --no-ignore --max-warnings=0 ${eslintFileNames}`,
+            // `eslint --no-ignore --max-warnings=0 --fix ${eslintFileNames}`, // tidak perlu di FIX, kalo di FIX otomatis nanti tidak tau apa yang dirubah sama eslint
+            `tsc --noEmit ${getTscFlags()} ${escapedFileNames}`,
+            // `tsc --noEmit ${escapedFileNames}`,
+            // `npx tsc-files --noEmit ${escapedFileNames}`,
+            // 'bash -c tsc --noEmit --skipLibCheck',
+        ];
+    },
+    '*.{json,md,mdx,css,scss,sass}': ['prettier --write'],
 };

@@ -93,7 +93,7 @@ module.exports = {
      * @param {string[]} filenames
      * _@returns {string[]}
      */
-    '*.{js,jsx}': async (filenames) => {
+    '*.{js,mjs,cjs,jsx}': async (filenames) => {
         const escapedFileNames = getEscapedFileNames(filenames);
         const eslintFileNames = await getEslintFileNames(filenames);
         return [
@@ -125,5 +125,5 @@ module.exports = {
             // 'bash -c tsc --noEmit --skipLibCheck',
         ];
     },
-    '*.{json,md,mdx,css,scss,sass}': ['prettier --write'],
+    '*.{json,md,mdx,css,scss,sass}': ['prettier --ignore-path .prettierignore --write'],
 };

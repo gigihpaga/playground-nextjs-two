@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# running script config>commitizen(cz-conventional-changelog) on package.json
+# exec < /dev/tty && npx git-cz --hook || true #disable this line if you want using plugin:cz-conventional-changelog

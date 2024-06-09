@@ -1,3 +1,21 @@
+/** @type {import('eslint')} */
+// module.exports = {
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["eslint:recommended", "plugin:jsx-a11y/recommended", "prettier", "next/core-web-vitals", "next"],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
+  "rules": {
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "always"],
+    "no-unused-vars": [
+      "off",
+      {
+        "args": "after-used",
+        "caughtErrors": "none",
+        "ignoreRestSiblings": true,
+        "vars": "all"
+      }
+    ],
+    "prefer-const": "off",
+    "react-hooks/exhaustive-deps": "warn"
+  }
 }

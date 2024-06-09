@@ -14,9 +14,9 @@ package-lock.json
 next-env.d.ts
 
 # percobaan
-src/app/globals.css
-src/app/layout.tsx
-src/app/page.tsx
+# src/app/globals.css
+# src/app/layout.tsx
+# src/app/page.tsx
 
 # src/app/dev/page.tsx
 # package.json

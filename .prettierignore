@@ -1,3 +1,19 @@
+# dependencies
+/node_modules
+package-lock.json
+
+# next.js
+/.next/
+/out/
+
+# lint
+/.husky/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# percobaan
 src/app/globals.css
 src/app/layout.tsx
 src/app/page.tsx

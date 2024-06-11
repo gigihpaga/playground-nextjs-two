@@ -1,0 +1,29 @@
+.skel {
+    position: relative;
+    --color-one: #eee;
+    --color-two: #ce1616;
+    overflow: hidden;
+}
+
+.skel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(90deg, var(--color-one, white), var(--color-two, black), var(--color-one, white));
+    background-size: 200%;
+    animation: skeleton 1s infinite reverse;
+    -webkit-animation: skeleton 1s infinite reverse;
+}
+
+@keyframes skeleton {
+    from {
+        background-position: -100% 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}

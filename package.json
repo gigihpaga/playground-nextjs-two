@@ -12,7 +12,9 @@
         "prepare-commit": "chmod +x .husky/*",
         "ts:check": "tsc --noEmit",
         "format:check": "npx prettier --check \"./src/**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\"",
-        "format:write": "npx prettier --write \"./src/**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\""
+        "format:write": "npx prettier --write \"./src/**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\"",
+        "prisma:studio": "npx prisma studio",
+        "prisma:migrate": "npx prisma migrate dev"
     },
     "config": {
         "commitizen": {
@@ -20,6 +22,9 @@
         }
     },
     "dependencies": {
+        "@clerk/nextjs": "^5.1.4",
+        "@hookform/resolvers": "^3.6.0",
+        "@prisma/client": "^5.15.0",
         "@radix-ui/react-accordion": "^1.1.2",
         "@radix-ui/react-alert-dialog": "^1.0.5",
         "@radix-ui/react-aspect-ratio": "^1.0.3",
@@ -59,11 +64,13 @@
         "react": "^18",
         "react-day-picker": "^8.10.1",
         "react-dom": "^18",
+        "react-hook-form": "^7.51.5",
         "react-resizable-panels": "^2.0.19",
         "sonner": "^1.5.0",
         "tailwind-merge": "^2.3.0",
         "tailwindcss-animate": "^1.0.7",
-        "vaul": "^0.9.1"
+        "vaul": "^0.9.1",
+        "zod": "^3.23.8"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.3.0",
@@ -82,6 +89,7 @@
         "lint-staged": "^15.2.5",
         "postcss": "^8",
         "prettier": "^3.3.1",
+        "prisma": "^5.15.0",
         "shell-quote": "^1.8.1",
         "tailwindcss": "^3.4.1",
         "tsc-files": "^1.1.4",

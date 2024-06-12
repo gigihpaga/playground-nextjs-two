@@ -1,7 +1,7 @@
 import { UserButton } from '@clerk/nextjs';
 import { Logo } from './logo';
 import { Separator } from '@/components/ui/separator';
-import { ThemeSwitcher } from './theme-switcher';
+import { ThemeSwitcherTwo } from './theme-switcher-two';
 
 export function NavBar() {
     return (
@@ -10,7 +10,7 @@ export function NavBar() {
                 <Logo />
                 <div className="flex gap-4 items-center">
                     <UserButton afterSignOutUrl="/sign-in" />
-                    <ThemeSwitcher />
+                    <ThemeSwitcherTwo />
                 </div>
             </nav>
             <Separator />

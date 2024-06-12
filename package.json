@@ -12,7 +12,9 @@
         "prepare-commit": "chmod +x .husky/*",
         "ts:check": "tsc --noEmit",
         "format:check": "npx prettier --check \"./src/**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\"",
+        "format:check:all": "npx prettier --check \"./**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\"",
         "format:write": "npx prettier --write \"./src/**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\"",
+        "format:write:all": "npx prettier --write \"./**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\"",
         "prisma:studio": "npx prisma studio",
         "prisma:migrate": "npx prisma migrate dev"
     },

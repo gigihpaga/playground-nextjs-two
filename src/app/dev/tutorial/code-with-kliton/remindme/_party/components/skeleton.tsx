@@ -15,7 +15,11 @@ export function Skeleton({ colorOne, colorTwo, className, children, ...props }: 
         '--color-two': colorTwo,
     } as MyCustomCSS;
     return (
-        <div style={a} className={cn(styles['skel'], '', className)} {...props}>
+        <div
+            style={a}
+            className={cn(styles['skel'], '', className)}
+            {...props}
+        >
             {children}
         </div>
     );

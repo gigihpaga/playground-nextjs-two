@@ -24,7 +24,10 @@ export function ThemeSwitcherTwo() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button
+                    variant="outline"
+                    size="icon"
+                >
                     {theme === 'light' ? (
                         <SunIcon className="size-[1rem] rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
                     ) : theme === 'dark' ? (
@@ -36,15 +39,24 @@ export function ThemeSwitcherTwo() {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <DropdownMenuItem className="justify-between" onClick={() => setTheme('light')}>
+                <DropdownMenuItem
+                    className="justify-between"
+                    onClick={() => setTheme('light')}
+                >
                     Light
                     {theme === 'light' && <CheckIcon />}
                 </DropdownMenuItem>
-                <DropdownMenuItem className="justify-between" onClick={() => setTheme('dark')}>
+                <DropdownMenuItem
+                    className="justify-between"
+                    onClick={() => setTheme('dark')}
+                >
                     Dark
                     {theme === 'dark' && <CheckIcon />}
                 </DropdownMenuItem>
-                <DropdownMenuItem className="justify-between" onClick={() => setTheme('system')}>
+                <DropdownMenuItem
+                    className="justify-between"
+                    onClick={() => setTheme('system')}
+                >
                     System
                     {theme === 'system' && <CheckIcon />}
                 </DropdownMenuItem>

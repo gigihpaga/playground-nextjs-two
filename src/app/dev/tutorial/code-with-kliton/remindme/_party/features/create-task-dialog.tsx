@@ -62,7 +62,10 @@ export function CreateTaskDialog({ open, setOpen, collection }: Props) {
     }
     // console.log('CreateTaskDialog: ', 'Render');
     return (
-        <Dialog open={open} onOpenChange={handleOpenChange}>
+        <Dialog
+            open={open}
+            onOpenChange={handleOpenChange}
+        >
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
                     <DialogTitle className="flex gap-2">
@@ -75,7 +78,10 @@ export function CreateTaskDialog({ open, setOpen, collection }: Props) {
                 </DialogHeader>
                 <div className="gap-4 py-4">
                     <Form {...form}>
-                        <form className="space-y-4 flex flex-col" onSubmit={form.handleSubmit((d) => handleOnSubmit(d))}>
+                        <form
+                            className="space-y-4 flex flex-col"
+                            onSubmit={form.handleSubmit((d) => handleOnSubmit(d))}
+                        >
                             <FormField
                                 name="content"
                                 control={form.control}
@@ -83,7 +89,11 @@ export function CreateTaskDialog({ open, setOpen, collection }: Props) {
                                     <FormItem>
                                         <FormLabel>Content</FormLabel>
                                         <FormControl>
-                                            <Textarea rows={5} placeholder="Task content here" {...field} />
+                                            <Textarea
+                                                rows={5}
+                                                placeholder="Task content here"
+                                                {...field}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                     </FormItem>
@@ -111,7 +121,12 @@ export function CreateTaskDialog({ open, setOpen, collection }: Props) {
                                                     </Button>
                                                 </PopoverTrigger>
                                                 <PopoverContent>
-                                                    <Calendar mode="single" selected={field.value} onSelect={field.onChange} initialFocus></Calendar>
+                                                    <Calendar
+                                                        mode="single"
+                                                        selected={field.value}
+                                                        onSelect={field.onChange}
+                                                        initialFocus
+                                                    ></Calendar>
                                                 </PopoverContent>
                                             </Popover>
                                         </FormControl>

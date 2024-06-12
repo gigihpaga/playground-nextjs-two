@@ -21,7 +21,10 @@ export function CreateCollectionButton() {
                     Create Collection
                 </span>
             </Button>
-            <CreateCollectionSheet open={open} onOpenChange={handleOpen} />
+            <CreateCollectionSheet
+                open={open}
+                onOpenChange={handleOpen}
+            />
         </div>
     );
 }

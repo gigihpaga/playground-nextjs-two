@@ -22,13 +22,22 @@ export function ThemeSwitcher() {
     return (
         <Tabs defaultValue={theme}>
             <TabsList className="border _dark:border-neutral-800 _dark:bg-[#030303]">
-                <TabsTrigger value="light" onClick={(e) => setTheme('light')}>
+                <TabsTrigger
+                    value="light"
+                    onClick={(e) => setTheme('light')}
+                >
                     <SunIcon className="h-[1.2rem] w-[1.2rem]" />
                 </TabsTrigger>
-                <TabsTrigger value="dark" onClick={(e) => setTheme('dark')}>
+                <TabsTrigger
+                    value="dark"
+                    onClick={(e) => setTheme('dark')}
+                >
                     <MoonIcon className="h-[1.2rem] w-[1.2rem] rotate-90 transition-all dark:rotate-0" />
                 </TabsTrigger>
-                <TabsTrigger value="system" onClick={(e) => setTheme('system')}>
+                <TabsTrigger
+                    value="system"
+                    onClick={(e) => setTheme('system')}
+                >
                     <DesktopIcon className="h-[1.2rem] w-[1.2rem]" />
                 </TabsTrigger>
             </TabsList>

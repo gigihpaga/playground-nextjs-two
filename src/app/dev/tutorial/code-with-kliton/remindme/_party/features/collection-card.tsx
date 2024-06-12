@@ -75,8 +75,16 @@ export function CollectionCard({ collection }: Props) {
     // console.log('CollectionCard: ', 'Render');
     return (
         <>
-            <CreateTaskDialog open={showCreateModal} setOpen={setShowCreateModal} collection={collection} />
-            <Collapsible aria-description="collapsible" open={isOpen} onOpenChange={(s) => setIsOpen(s)}>
+            <CreateTaskDialog
+                open={showCreateModal}
+                setOpen={setShowCreateModal}
+                collection={collection}
+            />
+            <Collapsible
+                aria-description="collapsible"
+                open={isOpen}
+                onOpenChange={(s) => setIsOpen(s)}
+            >
                 <CollapsibleTrigger asChild>
                     <Button
                         variant="ghost"
@@ -90,7 +98,10 @@ export function CollectionCard({ collection }: Props) {
                         {isOpen === true ? <CaretUpIcon className="w-6 h-6" /> : <CaretDownIcon className="w-6 h-6" />}
                     </Button>
                 </CollapsibleTrigger>
-                <CollapsibleContent aria-description="collapsible content" className="flex rounded-b-lg flex-col dark:bg-neutral-900 shadow-lg">
+                <CollapsibleContent
+                    aria-description="collapsible content"
+                    className="flex rounded-b-lg flex-col dark:bg-neutral-900 shadow-lg"
+                >
                     {collection.tasks.length < 1 ? (
                         <Button
                             variant="ghost"
@@ -105,10 +116,16 @@ export function CollectionCard({ collection }: Props) {
                         </Button>
                     ) : (
                         <>
-                            <Progress className="rounded-none" value={progress()} />
+                            <Progress
+                                className="rounded-none"
+                                value={progress()}
+                            />
                             <div className="p-4 gap-3 flex flex-col">
                                 {collection.tasks.map((task) => (
-                                    <TaskCard key={task.id} task={task} />
+                                    <TaskCard
+                                        key={task.id}
+                                        task={task}
+                                    />
                                 ))}
                             </div>
                         </>
@@ -121,12 +138,21 @@ export function CollectionCard({ collection }: Props) {
                             <div>Deleting...</div>
                         ) : (
                             <div>
-                                <Button variant="ghost" size="icon" className="size-8" onClick={() => setShowCreateModal(true)}>
+                                <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    className="size-8"
+                                    onClick={() => setShowCreateModal(true)}
+                                >
                                     <Plus className="size-4" />
                                 </Button>
                                 <AlertDialog>
                                     <AlertDialogTrigger asChild>
-                                        <Button variant="ghost" size="icon" className="size-8">
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            className="size-8"
+                                        >
                                             <TrashIcon className="size-4" />
                                         </Button>
                                     </AlertDialogTrigger>
@@ -138,10 +164,17 @@ export function CollectionCard({ collection }: Props) {
                                             </AlertDialogDescription>
                                         </AlertDialogHeader>
                                         <AlertDialogFooter>
-                                            <AlertDialogCancel variant="outline" size="sm">
+                                            <AlertDialogCancel
+                                                variant="outline"
+                                                size="sm"
+                                            >
                                                 Cancel
                                             </AlertDialogCancel>
-                                            <AlertDialogAction variant="default" size="sm" onClick={() => startTransaction(handleDeleteCollection)}>
+                                            <AlertDialogAction
+                                                variant="default"
+                                                size="sm"
+                                                onClick={() => startTransaction(handleDeleteCollection)}
+                                            >
                                                 Procced
                                             </AlertDialogAction>
                                         </AlertDialogFooter>

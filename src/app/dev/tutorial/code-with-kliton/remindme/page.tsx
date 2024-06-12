@@ -42,8 +42,16 @@ async function WelcomeMessage() {
 function WelcomeMessageFallback() {
     return (
         <Welcome>
-            <Skeleton colorOne="#1c1c1d" colorTwo="#302f31" className="w-[180px] h-[30px] rounded-lg mb-2" />
-            <Skeleton colorOne="#1c1c1d" colorTwo="#302f31" className="w-[150px] h-[30px] rounded-lg" />
+            <Skeleton
+                colorOne="#1c1c1d"
+                colorTwo="#302f31"
+                className="w-[180px] h-[30px] rounded-lg mb-2"
+            />
+            <Skeleton
+                colorOne="#1c1c1d"
+                colorTwo="#302f31"
+                className="w-[150px] h-[30px] rounded-lg"
+            />
         </Welcome>
     );
 }
@@ -84,7 +92,10 @@ async function CollectionList() {
             <CreateCollectionButton />
             <div className="flex flex-col gap-4 mt-6">
                 {collections.map((collection) => (
-                    <CollectionCard key={collection.id} collection={collection} />
+                    <CollectionCard
+                        key={collection.id}
+                        collection={collection}
+                    />
                 ))}
             </div>
         </>

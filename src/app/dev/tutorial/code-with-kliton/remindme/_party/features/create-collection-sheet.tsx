@@ -60,7 +60,10 @@ export function CreateCollectionSheet({ open, onOpenChange }: Props) {
     }
 
     return (
-        <Sheet open={open} onOpenChange={(state) => handleOpenChangeWrapper(state)}>
+        <Sheet
+            open={open}
+            onOpenChange={(state) => handleOpenChangeWrapper(state)}
+        >
             <SheetContent>
                 {/*  */}
                 <SheetHeader>
@@ -69,7 +72,10 @@ export function CreateCollectionSheet({ open, onOpenChange }: Props) {
                 </SheetHeader>
                 {/*  */}
                 <Form {...form}>
-                    <form className="mb-8 space-y-4 flex flex-col" onSubmit={form.handleSubmit((d) => handleOnSubmit(d))}>
+                    <form
+                        className="mb-8 space-y-4 flex flex-col"
+                        onSubmit={form.handleSubmit((d) => handleOnSubmit(d))}
+                    >
                         <FormField
                             name="name"
                             control={form.control}
@@ -77,7 +83,11 @@ export function CreateCollectionSheet({ open, onOpenChange }: Props) {
                                 <FormItem>
                                     <FormLabel>Name</FormLabel>
                                     <FormControl>
-                                        <Input className="h-8" placeholder="Personal" {...field}></Input>
+                                        <Input
+                                            className="h-8"
+                                            placeholder="Personal"
+                                            {...field}
+                                        ></Input>
                                     </FormControl>
                                     <FormDescription>Collection name</FormDescription>
                                     <FormMessage />
@@ -95,7 +105,10 @@ export function CreateCollectionSheet({ open, onOpenChange }: Props) {
                                             <SelectTrigger
                                                 className={cn('w-full h-8 _text-white', CollectionColors[field.value as CollectionColorType])}
                                             >
-                                                <SelectValue placeholder="Color" className="w-full" />
+                                                <SelectValue
+                                                    placeholder="Color"
+                                                    className="w-full"
+                                                />
                                             </SelectTrigger>
                                             <SelectContent className="w-full">
                                                 {(Object.keys(CollectionColors) as Array<CollectionColorType>).map((color) => (

@@ -9,7 +9,11 @@ const NavigationMenu = React.forwardRef<
     React.ElementRef<typeof NavigationMenuPrimitive.Root>,
     React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>
 >(({ className, children, ...props }, ref) => (
-    <NavigationMenuPrimitive.Root ref={ref} className={cn('relative z-10 flex max-w-max flex-1 items-center justify-center', className)} {...props}>
+    <NavigationMenuPrimitive.Root
+        ref={ref}
+        className={cn('relative z-10 flex max-w-max flex-1 items-center justify-center', className)}
+        {...props}
+    >
         {children}
         <NavigationMenuViewport />
     </NavigationMenuPrimitive.Root>
@@ -38,9 +42,16 @@ const NavigationMenuTrigger = React.forwardRef<
     React.ElementRef<typeof NavigationMenuPrimitive.Trigger>,
     React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-    <NavigationMenuPrimitive.Trigger ref={ref} className={cn(navigationMenuTriggerStyle(), 'group', className)} {...props}>
+    <NavigationMenuPrimitive.Trigger
+        ref={ref}
+        className={cn(navigationMenuTriggerStyle(), 'group', className)}
+        {...props}
+    >
         {children}{' '}
-        <ChevronDownIcon className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180" aria-hidden="true" />
+        <ChevronDownIcon
+            className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+            aria-hidden="true"
+        />
     </NavigationMenuPrimitive.Trigger>
 ));
 NavigationMenuTrigger.displayName = NavigationMenuPrimitive.Trigger.displayName;

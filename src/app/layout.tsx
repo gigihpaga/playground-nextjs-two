@@ -19,7 +19,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning={process.env.NODE_ENV === 'development' ? true : false}>
+        <html
+            lang="en"
+            suppressHydrationWarning={process.env.NODE_ENV === 'development' ? true : false}
+        >
             <body className={inter.className}>
                 <Providers>
                     <div className="flex min-h-screen w-full flex-col">

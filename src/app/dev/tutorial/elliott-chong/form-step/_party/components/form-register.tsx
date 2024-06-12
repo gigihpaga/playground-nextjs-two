@@ -63,7 +63,10 @@ export function FormRegister() {
             <CardContent>
                 {/* form */}
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(handleOnSubmit)} className="relative overflow-x-hidden">
+                    <form
+                        onSubmit={form.handleSubmit(handleOnSubmit)}
+                        className="relative overflow-x-hidden"
+                    >
                         {/* step 1 */}
                         <motion.div
                             className={cn('space-y-3 px-1', {
@@ -85,7 +88,11 @@ export function FormRegister() {
                                     <FormItem>
                                         <FormLabel>Name</FormLabel>
                                         <FormControl>
-                                            <Input className="h-8 py-0" placeholder="Enter your name" {...field} />
+                                            <Input
+                                                className="h-8 py-0"
+                                                placeholder="Enter your name"
+                                                {...field}
+                                            />
                                         </FormControl>
                                         <FormDescription>This is your public display name.</FormDescription>
                                         <FormMessage className="text-red-600" />
@@ -99,7 +106,11 @@ export function FormRegister() {
                                     <FormItem>
                                         <FormLabel>Email</FormLabel>
                                         <FormControl>
-                                            <Input className="h-8 py-0" placeholder="Enter your email" {...field} />
+                                            <Input
+                                                className="h-8 py-0"
+                                                placeholder="Enter your email"
+                                                {...field}
+                                            />
                                         </FormControl>
                                         <FormDescription>This is your public display name.</FormDescription>
                                         <FormMessage className="text-red-600" />
@@ -113,7 +124,11 @@ export function FormRegister() {
                                     <FormItem>
                                         <FormLabel>Student ID</FormLabel>
                                         <FormControl>
-                                            <Input className="h-8 py-0" placeholder="Enter your student id" {...field} />
+                                            <Input
+                                                className="h-8 py-0"
+                                                placeholder="Enter your student id"
+                                                {...field}
+                                            />
                                         </FormControl>
                                         <FormDescription>This is your public display name.</FormDescription>
                                         <FormMessage className="text-red-600" />
@@ -126,7 +141,10 @@ export function FormRegister() {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel>Year</FormLabel>
-                                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                        <Select
+                                            onValueChange={field.onChange}
+                                            defaultValue={field.value}
+                                        >
                                             <FormControl>
                                                 <SelectTrigger className="h-8 ">
                                                     <SelectValue placeholder="Select a verified year to display" />
@@ -134,7 +152,10 @@ export function FormRegister() {
                                             </FormControl>
                                             <SelectContent>
                                                 {[10, 11, 12].map((year) => (
-                                                    <SelectItem key={year} value={year.toString()}>
+                                                    <SelectItem
+                                                        key={year}
+                                                        value={year.toString()}
+                                                    >
                                                         {year}
                                                     </SelectItem>
                                                 ))}
@@ -142,7 +163,10 @@ export function FormRegister() {
                                         </Select>
                                         <FormDescription>
                                             You can manage email addresses in your{' '}
-                                            <Link className="underline" href="/examples/forms">
+                                            <Link
+                                                className="underline"
+                                                href="/examples/forms"
+                                            >
                                                 email settings
                                             </Link>
                                             .
@@ -179,7 +203,12 @@ export function FormRegister() {
                                     <FormItem>
                                         <FormLabel>Password</FormLabel>
                                         <FormControl>
-                                            <Input className="h-8 py-0" placeholder="Enter your password" {...field} type="password" />
+                                            <Input
+                                                className="h-8 py-0"
+                                                placeholder="Enter your password"
+                                                {...field}
+                                                type="password"
+                                            />
                                         </FormControl>
                                         <FormDescription>This is your public display name.</FormDescription>
                                         <FormMessage className="text-red-600" />
@@ -193,7 +222,12 @@ export function FormRegister() {
                                     <FormItem>
                                         <FormLabel>Comcomfirm Password</FormLabel>
                                         <FormControl>
-                                            <Input className="h-8 py-0" placeholder="Enter your comfirm password" {...field} type="password" />
+                                            <Input
+                                                className="h-8 py-0"
+                                                placeholder="Enter your comfirm password"
+                                                {...field}
+                                                type="password"
+                                            />
                                         </FormControl>
                                         <FormDescription>This is your public display name.</FormDescription>
                                         <FormMessage className="text-red-600" />
@@ -272,7 +306,10 @@ function ComDummy() {
             <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Name of your project" />
+                    <Input
+                        id="name"
+                        placeholder="Name of your project"
+                    />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="framework">Framework</Label>

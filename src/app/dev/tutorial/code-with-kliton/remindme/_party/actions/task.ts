@@ -2,11 +2,10 @@
 
 import prisma from '@/lib/prisma';
 import { type createTaskSchemaType, createTaskSchema } from '../schema/create-task';
-import { currentUser } from '@clerk/nextjs/server';
 import { type dev_task } from '@prisma/client';
 
 export async function addTaskMutation(form: createTaskSchemaType) {
-    const user = await currentUser();
+    const user = { id: Math.floor(Math.random() * 9_999 + 1_000).toString() };
     if (!user) throw new Error('User not found');
 
     const task = await prisma.dev_task.create({
@@ -26,7 +25,7 @@ export async function addTaskMutation(form: createTaskSchemaType) {
 }
 
 export async function updateTaskDoneMutation(id: dev_task['id'], done: dev_task['done']) {
-    const user = await currentUser();
+    const user = { id: Math.floor(Math.random() * 9_999 + 1_000).toString() };
     if (!user) throw new Error('User not found');
 
     const task = await prisma.dev_task.update({

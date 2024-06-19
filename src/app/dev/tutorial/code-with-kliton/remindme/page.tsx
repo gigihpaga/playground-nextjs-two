@@ -1,6 +1,5 @@
 import { ReactNode, Suspense } from 'react';
 import Image from 'next/image';
-import { currentUser } from '@clerk/nextjs/server';
 
 import { wait } from '@/utils/wait';
 import prisma from '@/lib/prisma';
@@ -26,7 +25,7 @@ export default async function Home() {
 }
 
 async function WelcomeMessage() {
-    const user = await currentUser();
+    const user = { id: Math.floor(Math.random() * 9_999 + 1_000).toString(), firstName: '', lastName: '' };
     await wait(3000);
 
     if (!user) {
@@ -65,7 +64,7 @@ function Welcome({ children }: { children: ReactNode | ReactNode[] }) {
 }
 
 async function CollectionList() {
-    const user = await currentUser();
+    const user = { id: Math.floor(Math.random() * 9_999 + 1_000).toString(), firstName: '', lastName: '' };
     const collections = await prisma.dev_collection.findMany({
         include: {
             tasks: true,

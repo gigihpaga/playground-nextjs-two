@@ -8,6 +8,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
+        "postinstall": "prisma generate",
         "prepare": "husky install",
         "commit": "git-cz",
         "prepare-commit": "chmod +x .husky/*",
@@ -17,7 +18,9 @@
         "format:write": "npx prettier --write \"./src/**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\"",
         "format:write:all": "npx prettier --write \"./**/*.{js,cjs,mjs,jsx,ts,tsx,mts,css,scss,sass,md,mdx,yml,yaml,}\"",
         "prisma:studio": "npx prisma studio",
-        "prisma:migrate": "npx prisma migrate dev"
+        "prisma:migrate": "npx prisma migrate dev",
+        "prisma:migrate:reset": "npx prisma migrate reset",
+        "prisma:push": "npx prisma db push"
     },
     "config": {
         "commitizen": {
@@ -25,6 +28,7 @@
         }
     },
     "dependencies": {
+        "@auth/prisma-adapter": "^2.2.0",
         "@hookform/resolvers": "^3.6.0",
         "@prisma/client": "^5.15.0",
         "@radix-ui/react-accordion": "^1.1.2",
@@ -55,6 +59,7 @@
         "@radix-ui/react-toggle": "^1.0.3",
         "@radix-ui/react-toggle-group": "^1.0.4",
         "@radix-ui/react-tooltip": "^1.0.7",
+        "bcryptjs": "^2.4.3",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
         "cmdk": "^1.0.0",
@@ -64,24 +69,30 @@
         "input-otp": "^1.2.4",
         "lucide-react": "^0.394.0",
         "next": "14.2.3",
+        "next-auth": "^5.0.0-beta.19",
         "next-themes": "^0.3.0",
         "react": "^18",
         "react-day-picker": "^8.10.1",
         "react-dom": "^18",
         "react-hook-form": "^7.51.5",
+        "react-icons": "^5.2.1",
         "react-resizable-panels": "^2.0.19",
+        "resend": "^3.3.0",
         "sonner": "^1.5.0",
         "tailwind-merge": "^2.3.0",
         "tailwindcss-animate": "^1.0.7",
+        "uuid": "^10.0.0",
         "vaul": "^0.9.1",
         "zod": "^3.23.8"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.3.0",
         "@commitlint/config-conventional": "^19.2.2",
+        "@types/bcryptjs": "^2.4.6",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
+        "@types/uuid": "^9.0.8",
         "commitizen": "^4.3.0",
         "cz-conventional-changelog": "^3.3.0",
         "eslint": "^8",

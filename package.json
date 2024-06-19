@@ -4,6 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
+        "clean": "rimraf --glob .next",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
@@ -93,6 +94,7 @@
         "postcss": "^8",
         "prettier": "^3.3.1",
         "prisma": "^5.15.0",
+        "rimraf": "^5.0.7",
         "shell-quote": "^1.8.1",
         "tailwindcss": "^3.4.1",
         "tsc-files": "^1.1.4",

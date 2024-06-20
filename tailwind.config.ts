@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config = {
     darkMode: ['class'],
@@ -73,14 +74,91 @@ const config = {
                     from: { height: 'var(--radix-accordion-content-height)' },
                     to: { height: '0' },
                 },
+                enterFromRight: {
+                    from: { opacity: '0', transform: 'translateX(200px)' },
+                    to: { opacity: '1', transform: 'translateX(0)' },
+                },
+                enterFromLeft: {
+                    from: { opacity: '0', transform: 'translateX(-200px)' },
+                    to: { opacity: '1', transform: 'translateX(0)' },
+                },
+                exitToRight: {
+                    from: { opacity: '1', transform: 'translateX(0)' },
+                    to: { opacity: '0', transform: 'translateX(200px)' },
+                },
+                exitToLeft: {
+                    from: { opacity: '1', transform: 'translateX(0)' },
+                    to: { opacity: '0', transform: 'translateX(-200px)' },
+                },
+                scaleIn: {
+                    from: { opacity: '0', transform: 'rotateX(-10deg) scale(0.9)' },
+                    to: { opacity: '1', transform: 'rotateX(0deg) scale(1)' },
+                },
+                scaleOut: {
+                    from: { opacity: '1', transform: 'rotateX(0deg) scale(1)' },
+                    to: { opacity: '0', transform: 'rotateX(-10deg) scale(0.95)' },
+                },
+                fadeIn: {
+                    from: { opacity: '0' },
+                    to: { opacity: '1' },
+                },
+                fadeOut: {
+                    from: { opacity: '1' },
+                    to: { opacity: '0' },
+                },
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
+                scaleIn: 'scaleIn 200ms ease',
+                scaleOut: 'scaleOut 200ms ease',
+                fadeIn: 'fadeIn 200ms ease',
+                fadeOut: 'fadeOut 200ms ease',
+                enterFromLeft: 'enterFromLeft 250ms ease',
+                enterFromRight: 'enterFromRight 250ms ease',
+                exitToLeft: 'exitToLeft 250ms ease',
+                exitToRight: 'exitToRight 250ms ease',
+            },
+            // custom user configuration
+            bgGradientDeg: {
+                75: '75deg',
             },
         },
     },
-    plugins: [require('tailwindcss-animate')],
+    plugins: [
+        require('tailwindcss-animate'),
+        /**
+         * resource:
+         * [Is there a way to adjust the angle of the linear gradient in Tailwind CSS?](https://stackoverflow.com/questions/71120394/is-there-a-way-to-adjust-the-angle-of-the-linear-gradient-in-tailwind-css)
+         */
+        plugin(function ({ matchUtilities, theme, addComponents, e, config, addUtilities }) {
+            matchUtilities(
+                {
+                    'bg-gradient-deg': (angle) => ({
+                        'background-image': `linear-gradient(${angle}, var(--tw-gradient-stops))`,
+                    }),
+                },
+                {
+                    // values from config and defaults you wish to use most
+                    values: Object.assign(
+                        theme('bgGradientDeg', {}), // name of config key. Must be unique
+                        {
+                            10: '10deg', // bg-gradient-deg-10
+                            15: '15deg',
+                            20: '20deg',
+                            25: '25deg',
+                            30: '30deg',
+                            45: '45deg',
+                            60: '60deg',
+                            90: '90deg',
+                            120: '120deg',
+                            135: '135deg',
+                        }
+                    ),
+                }
+            );
+        }),
+    ],
 } satisfies Config;
 
 export default config;

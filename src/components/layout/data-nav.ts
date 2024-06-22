@@ -171,4 +171,20 @@ export const tutorial: Tutorial[] = [
             },
         ],
     },
+    {
+        instructorName: 'open java script',
+        urlBase: '/dev/tutorial/open-java-script',
+        books: [
+            {
+                title: 'download a faile with axios ',
+                description: 'download file using axios and progress download',
+                urlCode: '/download-file-axios',
+                titleTutorial: 'Download a File with Axios | JavaScript Tutorial',
+                urlTutorial: 'https://www.youtube.com/watch?v=zydZIiQcgaY',
+                urlResources: [],
+                tags: ['Download', 'API'],
+                packages: ['axios'],
+            },
+        ],
+    },
 ];

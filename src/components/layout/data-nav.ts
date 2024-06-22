@@ -56,9 +56,22 @@ export const getStarteds: Std[] = [
     },
 ];
 
-const TagValue = ['Drag N Drop', 'Data Fetching', 'Database', 'UI/UX', 'Motion', 'Auth', 'Component'] as const;
+const TagValue = [
+    'Drag N Drop',
+    'Data Fetching',
+    'Database',
+    'UI/UX',
+    'Motion',
+    'Auth',
+    'Component',
+    'Backend',
+    'API',
+    'Upload',
+    'Download',
+    'No Dependencies',
+] as const;
 
-const PackageValue = ['zod', 'react-hook-form', 'next-auth', 'framer-motion', 'prisma', 'shadcn'] as const;
+const PackageValue = ['zod', 'react-hook-form', 'next-auth', 'framer-motion', 'prisma', 'shadcn', 'axios'] as const;
 
 export type Book = {
     title: string;
@@ -123,6 +136,22 @@ export const tutorial: Tutorial[] = [
                 urlResources: ['https://www.codewithantonio.com/projects/auth-masterclass'],
                 tags: ['Auth'],
                 packages: ['shadcn', 'react-hook-form', 'zod', 'next-auth'],
+            },
+        ],
+    },
+    {
+        instructorName: 'build saas with ethan',
+        urlBase: '/dev/tutorial/build-saas-with-ethan',
+        books: [
+            {
+                title: 'upload in next js',
+                description: 'upload file without no depedencies',
+                urlCode: '/upload-file',
+                titleTutorial: 'File Upload in Next.js 13 App Directory with NO libraries! Client and React Server Components!',
+                urlTutorial: 'https://www.youtube.com/watch?v=-_bhH4MLq1Y',
+                urlResources: [],
+                tags: ['Backend', 'API', 'Upload'],
+                packages: [],
             },
         ],
     },

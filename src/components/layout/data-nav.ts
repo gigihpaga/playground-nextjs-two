@@ -155,4 +155,20 @@ export const tutorial: Tutorial[] = [
             },
         ],
     },
+    {
+        instructorName: 'fahad code journey',
+        urlBase: '/dev/tutorial/fahad-code-journey',
+        books: [
+            {
+                title: 'download in next js',
+                description: 'upload & download local file without no depedencies',
+                urlCode: '/download-upload-file',
+                titleTutorial: 'How to download file in Next Js',
+                urlTutorial: 'https://www.youtube.com/watch?v=6T_tiHBEvq8',
+                urlResources: [],
+                tags: ['Upload', 'Download', 'No Dependencies'],
+                packages: [],
+            },
+        ],
+    },
 ];

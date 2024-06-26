@@ -237,4 +237,20 @@ export const tutorial: Tutorial[] = [
             },
         ],
     },
+    {
+        instructorName: 'tuat tran anh',
+        urlBase: '/dev/tutorial/tuat-tran-anh',
+        books: [
+            {
+                title: 'drag and drop upload',
+                description: 'drag and drop file upload ',
+                urlCode: '/drag-and-drop-upload',
+                titleTutorial: 'React Drag Drop File Input Component | React Drag And Drop | ReactJS Tutorial',
+                urlTutorial: 'https://www.youtube.com/watch?v=Aoz0eQAbEUo&t=1167s',
+                urlResources: ['https://github.com/trananhtuat/react-drop-file-input/tree/main'],
+                tags: ['Drag and Drop', 'Upload', 'No Dependencies'],
+                packages: [],
+            },
+        ],
+    },
 ];

@@ -221,4 +221,20 @@ export const tutorial: Tutorial[] = [
             },
         ],
     },
+    {
+        instructorName: 'hamed bahram',
+        urlBase: '/dev/tutorial/hamed-bahram',
+        books: [
+            {
+                title: 'drag and drop upload',
+                description: 'drag and drop using react-dropzone',
+                urlCode: '/drag-and-drop-upload-cloudinary',
+                titleTutorial: 'Drag and dropping files in React using react-dropzone',
+                urlTutorial: 'https://www.youtube.com/watch?v=eGVC8UUqCBE&t=402s',
+                urlResources: ['https://github.com/HamedBahram/dropzone'],
+                tags: ['Drag and Drop', 'Upload'],
+                packages: ['react-dropzone'],
+            },
+        ],
+    },
 ];

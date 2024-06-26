@@ -57,7 +57,7 @@ export const getStarteds: Std[] = [
 ];
 
 const TagValue = [
-    'Drag N Drop',
+    'Drag and Drop',
     'Data Fetching',
     'Database',
     'UI/UX',
@@ -69,9 +69,11 @@ const TagValue = [
     'Upload',
     'Download',
     'No Dependencies',
+    'Fundamental',
+    'Form',
 ] as const;
 
-const PackageValue = ['zod', 'react-hook-form', 'next-auth', 'framer-motion', 'prisma', 'shadcn', 'axios'] as const;
+const PackageValue = ['zod', 'react-hook-form', 'next-auth', 'framer-motion', 'prisma', 'shadcn', 'axios', 'react-dropzone'] as const;
 
 export type Book = {
     title: string;
@@ -131,7 +133,7 @@ export const tutorial: Tutorial[] = [
                 title: 'autentication next-auth 5',
                 description: 'OAuth google, github dan credtial with email verification using resend',
                 urlCode: '/authjs',
-                titleTutorial: 'NextJs course Full Stack RemindApp ReactJs Typescript, React Hook form, ShadcnUI, TailwindCSS',
+                titleTutorial: 'Next Auth V5 - Advanced Guide (2024)',
                 urlTutorial: 'https://www.youtube.com/watch?v=1MTyCvS05V4',
                 urlResources: ['https://www.codewithantonio.com/projects/auth-masterclass'],
                 tags: ['Auth'],
@@ -184,6 +186,22 @@ export const tutorial: Tutorial[] = [
                 urlResources: [],
                 tags: ['Download', 'API'],
                 packages: ['axios'],
+            },
+        ],
+    },
+    {
+        instructorName: 'steve griffith',
+        urlBase: '/dev/tutorial/steve-griffith',
+        books: [
+            {
+                title: 'basic drag and drop',
+                description: 'fundamental drag and drop javascript',
+                urlCode: '/fundamental-drag-and-drop',
+                titleTutorial: 'Everything HTML5 Drag and Drop',
+                urlTutorial: 'https://www.youtube.com/watch?v=Pje43sNdsaA',
+                urlResources: ['https://gist.github.com/prof3ssorSt3v3/bae1899ebada639da936505455961e6b'],
+                tags: ['Drag and Drop', 'Fundamental', 'No Dependencies'],
+                packages: [],
             },
         ],
     },

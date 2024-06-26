@@ -279,4 +279,20 @@ export const tutorial: Tutorial[] = [
             },
         ],
     },
+    {
+        instructorName: 'damien',
+        urlBase: '/dev/tutorial/damien',
+        books: [
+            {
+                title: 'form input file validation',
+                description: 'form input file validation',
+                urlCode: '/form-input-file-validation-shadcn-zod',
+                titleTutorial: 'Input file x Shadcn x Zod',
+                urlTutorial: 'https://medium.com/@damien_16960/input-file-x-shadcn-x-zod-88f0472c2b81',
+                urlResources: ['https://medium.com/@damien_16960/input-file-x-shadcn-x-zod-88f0472c2b81'],
+                tags: ['Form'],
+                packages: ['shadcn', 'zod', 'react-hook-form'],
+            },
+        ],
+    },
 ];

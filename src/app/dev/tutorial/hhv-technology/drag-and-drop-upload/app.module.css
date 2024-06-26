@@ -1,0 +1,212 @@
+.upload-box > p {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.app img {
+    width: 100%;
+}
+
+.file-input {
+}
+
+.icon {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #364755;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.upload-box {
+    width: 100%;
+    /* background: #fff; */
+    background: #404142;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 5px;
+    box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
+}
+
+.upload-box form {
+    /* background-color: yellow; */
+    height: 170px;
+    display: flex;
+    /* cursor: pointer; */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border: 2px dashed #0086fe;
+}
+
+.upload-box form :where(i, p) {
+    color: #0086fe;
+}
+.upload-box form i {
+    font-size: 50px;
+}
+.upload-box form i svg:not(:has(.check)) {
+    width: 50px;
+    height: 50px;
+}
+.upload-box form p {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.app section .row {
+    margin-bottom: 10px;
+    background-color: #d5ebff;
+    background-color: #515253;
+    list-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.app section .row i svg {
+    color: #0086fe;
+}
+
+.app section .row i svg:is(.check) {
+    color: #00fe4c;
+}
+.app section .row i:has(svg.check) {
+    /* align-self: end; */
+}
+
+.app section .row i svg:not(:is(.check)) {
+    width: 30px;
+    height: 30px;
+}
+.app section .details span,
+.app section .content span {
+    font-size: 12px;
+}
+
+.loading-area .row .content {
+    /* background-color: plum; */
+    width: 100%;
+    margin-left: 15px;
+}
+
+.loading-area .details {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 7px; */
+    justify-content: space-between;
+}
+
+.loading-area .content .loading-bar {
+    height: 6px;
+    width: 100%;
+    /* margin-bottom: 4px; */
+    background: #fff;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.content .loading-bar .loading {
+    height: 100%;
+    width: 10%;
+    background: #0086fe;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+
+.loading-area {
+}
+
+.row {
+}
+
+.content {
+}
+
+.details {
+}
+
+.name {
+}
+
+.percent {
+    margin-left: 5px;
+}
+
+.loading-bar {
+}
+
+.loading {
+}
+
+.upload-area {
+    overflow-y: scroll;
+}
+.upload-area.onpregress {
+    max-height: 150px;
+}
+.upload-area::-webkit-scrollbar {
+    width: 0px;
+}
+
+.upload-area .row .content {
+    display: flex;
+    align-items: center;
+    /* tambahan paga */
+    flex: 1;
+}
+.upload-area .row .details {
+    display: flex;
+    margin-left: 15px;
+    flex-direction: column;
+}
+.upload-area .row .details .size {
+    color: #404040;
+    color: #c5c6c9;
+    font-size: 11px;
+}
+
+.upload {
+}
+
+.app .oh {
+    height: 50px;
+    width: 100px;
+    border: 2px solid yellow;
+    margin-bottom: 10px;
+}
+
+.app .oh:not(:is(.yes)) {
+    border-style: dashed;
+}
+.app .oh:is(:not(.yes)) {
+    border-style: dotted;
+}

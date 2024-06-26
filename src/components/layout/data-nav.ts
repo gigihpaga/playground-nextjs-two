@@ -267,6 +267,16 @@ export const tutorial: Tutorial[] = [
                 tags: ['Drag and Drop', 'No Dependencies'],
                 packages: [],
             },
+            {
+                title: 'drag and drop upload',
+                description: 'drag and drop upload with progress using axios',
+                urlCode: '/drag-and-drop-upload',
+                titleTutorial: 'React JS - How to upload file with progress percent step by step',
+                urlTutorial: 'https://www.youtube.com/watch?v=u31mCmwBFS8',
+                urlResources: [],
+                tags: ['Drag and Drop', 'Upload'],
+                packages: ['axios'],
+            },
         ],
     },
 ];

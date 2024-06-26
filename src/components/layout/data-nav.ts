@@ -253,4 +253,20 @@ export const tutorial: Tutorial[] = [
             },
         ],
     },
+    {
+        instructorName: 'hhv technology',
+        urlBase: '/dev/tutorial/hhv-technology',
+        books: [
+            {
+                title: 'drag and drop input image',
+                description: 'drag and drop input image with preview',
+                urlCode: '/drag-and-drop-input-image-with-preview',
+                titleTutorial: 'React JS - How to drag drop image upload step by step',
+                urlTutorial: 'https://www.youtube.com/watch?v=b-9Hw03yzTs',
+                urlResources: [],
+                tags: ['Drag and Drop', 'No Dependencies'],
+                packages: [],
+            },
+        ],
+    },
 ];

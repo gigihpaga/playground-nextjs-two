@@ -73,7 +73,7 @@ const TagValue = [
     'Form',
 ] as const;
 
-const PackageValue = ['zod', 'react-hook-form', 'next-auth', 'framer-motion', 'prisma', 'shadcn', 'axios', 'react-dropzone'] as const;
+const PackageValue = ['zod', 'react-hook-form', 'formik', 'next-auth', 'framer-motion', 'prisma', 'shadcn', 'axios', 'react-dropzone'] as const;
 
 export type Book = {
     title: string;
@@ -202,6 +202,22 @@ export const tutorial: Tutorial[] = [
                 urlResources: ['https://gist.github.com/prof3ssorSt3v3/bae1899ebada639da936505455961e6b'],
                 tags: ['Drag and Drop', 'Fundamental', 'No Dependencies'],
                 packages: [],
+            },
+        ],
+    },
+    {
+        instructorName: 'bruno antunes',
+        urlBase: '/dev/tutorial/bruno-antunes',
+        books: [
+            {
+                title: 'drag and drop upload',
+                description: 'drag and drop using react-dropzone upload cloudinary',
+                urlCode: '/drag-and-drop-upload-cloudinary',
+                titleTutorial: 'React File Upload Tutorial with Drag-n-Drop and ProgressBar',
+                urlTutorial: 'https://www.youtube.com/watch?v=MAw0lQKqjRA&t=56s',
+                urlResources: ['https://github.com/bmvantunes/youtube-2021-feb-multiple-file-upload-formik'],
+                tags: ['Drag and Drop', 'Upload'],
+                packages: ['react-dropzone', 'formik'],
             },
         ],
     },

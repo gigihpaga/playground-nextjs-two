@@ -13,17 +13,20 @@ const MimeImage = ['png', 'jpeg', 'jpg', 'svg', 'tif', 'tiff', 'webp', 'gif'];
 const formSchema = z.object({
     // file: typeof window === 'undefined' ? z.any() : z.instanceof(FileList).optional(),
     // file: z.instanceof(FileList).optional(),
-    file: z
-        .instanceof(FileList)
-        .refine((file) => file.length == 1, 'File is required.')
-        .refine(
-            (files) => {
-                // return MimeImage.some((mime) => mime === files[0].type.split('/')[1]);
-                return MimeImage.some((mime) => mime === files?.[0]?.name.split('.').pop());
-            },
-            `File type must be: ${MimeImage.join(', ')}`
-        )
-        .refine((files) => files[0]?.size < 250_000, 'File max size is 250 KB.'),
+    file:
+        typeof window === 'undefined'
+            ? z.any()
+            : z
+                  .instanceof(FileList)
+                  .refine((file) => file.length == 1, 'File is required.')
+                  .refine(
+                      (files) => {
+                          // return MimeImage.some((mime) => mime === files[0].type.split('/')[1]);
+                          return MimeImage.some((mime) => mime === files?.[0]?.name.split('.').pop());
+                      },
+                      `File type must be: ${MimeImage.join(', ')}`
+                  )
+                  .refine((files) => files[0]?.size < 250_000, 'File max size is 250 KB.'),
 });
 
 export default function FormValidationInputFileShadcnZodPage() {

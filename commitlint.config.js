@@ -1,4 +1,4 @@
-module.exports = {
+const commitLintConfig = {
     extends: ['@commitlint/config-conventional'],
     rules: {
         'header-max-length': [2, 'always', 251],
@@ -8,3 +8,5 @@ module.exports = {
         'footer-max-line-length': [2, 'always', 555], // caracter in footer (per line)
     },
 };
+
+export default commitLintConfig;

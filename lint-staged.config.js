@@ -1,5 +1,5 @@
-const { quote } = require('shell-quote');
-const { ESLint } = require('eslint');
+import { quote } from 'shell-quote';
+import { ESLint } from 'eslint';
 
 const eslint = new ESLint();
 
@@ -88,7 +88,7 @@ const getTscFlags = () => {
         .join(' ');
 };
 
-module.exports = {
+const lintStaggedConfig = {
     /**
      * @param {string[]} filenames
      * _@returns {string[]}
@@ -129,3 +129,5 @@ module.exports = {
     },
     '*.{json,md,mdx,css,scss,sass}': ['prettier --ignore-path .prettierignore --write'],
 };
+
+export default lintStaggedConfig;

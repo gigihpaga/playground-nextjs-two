@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { wait } from '@/utils/wait';
 import prisma from '@/lib/prisma';
+import { currentUser } from '@/lib/auth/current-login';
 
 import { Skeleton as SkeletonShadcn } from '@/components/ui/skeleton';
 import { Skeleton } from '@/app/dev/tutorial/code-with-kliton/remindme/_party/components/skeleton';
@@ -64,7 +65,8 @@ function Welcome({ children }: { children: ReactNode | ReactNode[] }) {
 }
 
 async function CollectionList() {
-    const user = { id: Math.floor(Math.random() * 9_999 + 1_000).toString(), firstName: '', lastName: '' };
+    const user = await currentUser();
+    if (!user?.id) throw new Error('User not found');
     const collections = await prisma.dev_collection.findMany({
         include: {
             tasks: true,

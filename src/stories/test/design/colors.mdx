@@ -1,0 +1,34 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Test/Base/Colors" />
+
+<ColorPalette>
+    <ColorItem
+        title="theme.color.greyscale"
+        subtitle="Some of the greys"
+        colors={{ White: '#FFFFFF', Alabaster: '#F8F8F8', Concrete: '#F3F3F3' }}
+    />
+
+    <ColorItem
+        title="theme.color.primary"
+        subtitle="Coral"
+        colors={{ WildWatermelon: '#FF4785' }}
+    />
+
+    <ColorItem
+        title="theme.color.secondary"
+        subtitle="Ocean"
+        colors={{ DodgerBlue: '#1EA7FD' }}
+    />
+    <ColorItem
+        title="theme.color.positive"
+        subtitle="Green"
+        colors={{
+            Dash: 'rgba(102,191,60,1)',
+            Dash80: 'rgba(102,191,60,0.8)',
+            Dash60: 'rgba(102,191,60,0.6)',
+            Dash30: 'rgba(102,191,60,0.3)',
+        }}
+    />
+
+</ColorPalette>

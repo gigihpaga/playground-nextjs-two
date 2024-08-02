@@ -1,0 +1,13 @@
+.btn {
+    padding: 3px 8px;
+    text-decoration: underline;
+}
+/**
+npm uninstall -D css-loader
+npm uninstall -D css-loader-shorter-classnames
+npm uninstall -D postcss-loader
+npm uninstall -D postcss-nested
+npm uninstall -D postcss-simple-vars
+npm uninstall -D storybook-css-modules
+npm uninstall -D style-loader
+*/

@@ -1,0 +1,10 @@
+$text-color: #919191;
+
+.btn {
+    color: $text-color;
+    font-weight: bold;
+
+    &:disabled {
+        color: cyan;
+    }
+}

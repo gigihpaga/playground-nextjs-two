@@ -7,6 +7,23 @@ import AuthConfig from '@/lib/auth/auth-config-antonio';
 import { publicRoutes, authRoutesList, apiAuthPrefix, DEFAULT_LOGIN_REDIRECT, authRoutes } from '@/lib/auth/routes';
 
 const { auth } = NextAuth(AuthConfig);
+/**
+ * i want to get role user in middleware
+ * fix single instants
+ * - [in the middleware, the session is not extended with custom fields](https://github.com/nextauthjs/next-auth/issues/9836#issuecomment-1925514747)
+ * - change
+ * ```js
+ * import NextAuth from 'next-auth';
+ * import AuthConfig from '@/lib/auth/auth-config-antonio';
+ * const { auth } = NextAuth(AuthConfig)
+ *
+ * // to
+ * import { auth } from '@/lib/auth/auth-antonio';
+ * ```
+ * setelah mendapatkan solusi, muncul masalah baru 🤣
+ * - [Can't use Prisma client in Next.js middleware, even when deploying to Node.js](https://github.com/prisma/prisma/issues/21310)
+ */
+// import { auth } from '@/lib/auth/auth-antonio';
 
 export default auth((req) => {
     const { nextUrl } = req;
@@ -14,9 +31,10 @@ export default auth((req) => {
     const isLoggedIn = !!req.auth;
     const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
     const isPublicRoute = publicRoutes.some((d) => d.startsWith(`/${nextUrl.pathname.split('/')[1]}`));
+    const isApiPublic = publicRoutes.filter((d) => d.startsWith('/api/')).some((d) => d.startsWith(nextUrl.pathname));
     const isAuthRoute = (authRoutesList as Array<string>).includes(nextUrl.pathname);
 
-    if (isApiAuthRoute) return NextResponse.next();
+    if (isApiAuthRoute || isApiPublic) return NextResponse.next();
 
     if (nextUrl.pathname.startsWith('/api') && !isApiAuthRoute) {
         if (isLoggedIn) {
@@ -54,6 +72,7 @@ export default auth((req) => {
 
 /**
  * [Middleware NextJs.js](https://authjs.dev/getting-started/session-management/protecting#nextjs-middleware)
+ * /((?!.*\\..*|_next|_next/static|_next/image|images).*)
  */
 export const config = {
     // matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'], // [match all route/request url by nextjs](https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher)

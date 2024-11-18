@@ -7,6 +7,8 @@
 export const publicRoutes: string[] = [
     //
     '/blog',
+    '/api/testing',
+    '/api/token',
 ];
 
 export const authRoutes = {

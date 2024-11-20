@@ -21,7 +21,7 @@ import { SheetTutorial } from './sheet-tutorial';
 
 export function NavigationMenuTop() {
     return (
-        <NavigationMenu className="">
+        <NavigationMenu className="hidden md:block">
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>

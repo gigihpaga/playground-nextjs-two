@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
         if (!file) return NextResponse.json({ message: 'file is required' }, { status: 400 });
 
         const bytes = await file.arrayBuffer();
-        const buffer = Buffer.from(bytes);
+        const buffer = new Uint8Array(bytes);
 
         /**
          * with the file data in the buffer, you can di whatever you want with it,

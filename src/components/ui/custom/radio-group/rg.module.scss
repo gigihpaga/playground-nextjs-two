@@ -1,0 +1,128 @@
+.rg {
+    --color-text-0: hsl(0, 0%, 11%);
+    --color-text-1: hsl(0, 0%, 18%);
+    --color-text-3: hsl(220, 2%, 65%);
+    --color-muted-0: hsl(0, 0%, 0%, 2%);
+    --color-muted-1: hsl(0, 0%, 0%, 10%);
+    --color-muted-2: hsl(0, 0%, 0%, 4.3%);
+    --color-focus: hsl(214, 100%, 29%);
+    --color-selected: hsl(214, 84%, 56%);
+    --color-selected-contrast: hsl(0, 0%, 100%);
+    --color-selection-fill: hsl(210, 100%, 56%, 24%);
+    --color-selection-stroke: hsl(214, 84%, 56%);
+    --radius-2: 6px;
+
+    html:is([class~='dark']) & {
+        --color-text-0: hsl(0, 9%, 94%);
+        --color-text-1: hsl(0, 0%, 85%);
+        --color-text-3: hsl(210, 6%, 45%);
+        --color-muted-0: hsl(0, 0%, 100%, 2%);
+        --color-muted-1: hsl(0, 0%, 100%, 10%);
+        --color-muted-2: hsl(0, 0%, 100%, 5%);
+        --color-focus: hsl(217, 76%, 80%);
+        --color-selected: hsl(217, 89%, 61%);
+        --color-selected-contrast: hsl(0, 0%, 100%);
+        --color-selection-fill: hsl(209, 100%, 57%, 20%);
+        --color-selection-stroke: hsl(214, 84%, 56%);
+    }
+
+    user-select: none;
+    box-sizing: border-box;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rg__item {
+    // .tlui-button
+    position: relative;
+    min-width: 48px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: transparent;
+    color: currentColor;
+    cursor: pointer;
+    pointer-events: all;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    text-rendering: optimizeLegibility;
+    font-size: 12px;
+    gap: 0px;
+    color: var(--color-text-1);
+
+    // tlui-button__tool
+    position: relative;
+    height: 48px;
+    width: 48px;
+    // margin-left: -2px;
+    // margin-right: -2px;
+
+    & > * {
+        z-index: 1;
+    }
+
+    &:nth-of-type(1) {
+        // margin-left: 0;
+    }
+
+    &:nth-last-of-type(1) {
+        // margin-right: 0;
+    }
+
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        inset: 4px;
+        background-color: transparent;
+        border-radius: var(--radius-2);
+        -webkit-border-radius: var(--radius-2);
+        -moz-border-radius: var(--radius-2);
+        -ms-border-radius: var(--radius-2);
+        -o-border-radius: var(--radius-2);
+    }
+
+    &:disabled {
+        color: var(--color-text-3);
+        text-shadow: none;
+        cursor: default;
+    }
+
+    &[aria-checked='true']:not(:disabled):after {
+        background: var(--color-selected);
+        opacity: 1;
+    }
+    &[data-state='hinted']:not(:disabled):after {
+        background-color: var(--color-muted-2);
+        opacity: 1;
+    }
+
+    // &:hover:not(:disabled):not([aria-checked='true']) {
+    &:hover:not(:disabled, [aria-checked='true']):after {
+        background-color: var(--color-muted-2);
+        opacity: 1;
+    }
+
+    &[aria-checked='true'] {
+        color: var(--color-selected-contrast);
+    }
+
+    // @media (hover: hover) {
+    //     &:after {
+    //         top: 4px;
+    //         right: 4px;
+    //         bottom: 4px;
+    //         left: 4px;
+    //         border-radius: 8px;
+    //     }
+    //     &:after {
+    //         background-color: var(--color-muted-2);
+    //         opacity: 1;
+    //     }
+    // }
+}

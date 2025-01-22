@@ -81,7 +81,7 @@ function AccordionTutorial() {
                             value={tutorial.urlBase}
                         >
                             <AccordionTrigger className="underline-offset-4 capitalize">{tutorial.instructorName}</AccordionTrigger>
-                            <AccordionContent>
+                            <AccordionContent className="space-y-2">
                                 {tutorial.books.map((d) => (
                                     <LinkCard
                                         key={tutorial.urlBase + d.urlCode}

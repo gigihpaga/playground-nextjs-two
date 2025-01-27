@@ -7,6 +7,7 @@ import localStorage from './storage-persist-local';
 import indexedDBStorage from '@piotr-cz/redux-persist-idb-storage';
 
 //* reducers
+import { pwuPostReducer } from '@/app/dev/tutorial/programming-with-umair/integrate-redux-toolkit/_party/state/post-slice';
 
 /**
  * persist article
@@ -19,5 +20,13 @@ import indexedDBStorage from '@piotr-cz/redux-persist-idb-storage';
  */
 
 //* Pesist
+const pwuPostPersistConfig = {
+    key: 'pwuPost',
+    whitelist: ['pwuPost'],
+    storage: localStorage, // local storage
+};
 
-export const rootReducer = combineReducers({});
+export const rootReducer = combineReducers({
+    pwuPost: persistReducer(pwuPostPersistConfig, pwuPostReducer),
+    // pwuPost: pwuPostReducer,
+});

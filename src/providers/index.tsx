@@ -3,6 +3,7 @@ import { type ReactNode } from 'react';
 import dynamic from 'next/dynamic';
 import { ThemeProvider } from './theme-provider';
 import { NextAuthProvider } from './next-auth-provider';
+import { ReactQueryProviders } from './react-query-provider';
 // import ReduxProvider from './redux-provider';
 const ReduxProvider = dynamic(() => import('./redux-provider'), {
     ssr: false,
@@ -17,7 +18,9 @@ export function Providers({ children }: { children: ReactNode | ReactNode[] }) {
         <>
             <NextAuthProvider>
                 <ThemeProvider>
-                    <ReduxProvider>{children}</ReduxProvider>
+                    <ReactQueryProviders>
+                        <ReduxProvider>{children}</ReduxProvider>
+                    </ReactQueryProviders>
                 </ThemeProvider>
             </NextAuthProvider>
             <Toaster />

@@ -1,8 +1,15 @@
 /** @type {import('eslint')} */
 // module.exports = {
 {
-    "extends": ["eslint:recommended", "plugin:jsx-a11y/recommended", "prettier", "next/core-web-vitals", "next"],
-    "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:@tanstack/eslint-plugin-query/recommended",
+        "prettier",
+        "next/core-web-vitals",
+        "next"
+    ],
+    "plugins": ["react", "react-hooks", "jsx-a11y", "prettier", "@tanstack/query"],
     "rules": {
         "quotes": ["warn", "single"],
         "semi": ["warn", "always"],
@@ -16,8 +23,24 @@
             }
         ],
         "prefer-const": "off",
-        "react-hooks/exhaustive-deps": "warn"
+        "react-hooks/exhaustive-deps": "warn",
+        "@tanstack/query/exhaustive-deps": "error",
+        "@tanstack/query/no-rest-destructuring": "warn",
+        "@tanstack/query/stable-query-client": "error"
+        // "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }]
     },
+    /**
+        "sort-imports": [
+            "warn",
+            {
+                "ignoreCase": false,
+                "ignoreDeclarationSort": true,
+                "ignoreMemberSort": false,
+                "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+                "allowSeparatedGroups": true
+            }
+        ],
+        */
     "overrides": [
         {
             // https://redux-toolkit.js.org/usage/immer-reducers#linting-state-mutations

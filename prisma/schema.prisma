@@ -137,3 +137,13 @@ model Authenticator {
 
   @@id([userId, credentialID])
 }
+
+// src/app/dev/tutorial/code-bucks/bloging
+model BlogView {
+  id          String   @id @default(cuid())
+  idBlog      String   @unique
+  slug        String
+  counterView Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

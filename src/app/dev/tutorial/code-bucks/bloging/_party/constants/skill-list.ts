@@ -1,0 +1,15 @@
+export const skillList = [
+    'next.js',
+    'tailwind css',
+    'figma',
+    'javaScript',
+    'web design',
+    'Gatsby.js',
+    'strapi',
+    'firebase',
+    'generative AI',
+    'wireframing',
+    'SEO',
+    'framer motion',
+    'sanity',
+] as const;

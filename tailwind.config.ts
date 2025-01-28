@@ -59,6 +59,13 @@ const config = {
                     DEFAULT: 'hsl(var(--card))',
                     foreground: 'hsl(var(--card-foreground))',
                 },
+                'cb-dark': '#1b1b1b', // code bucks
+                'cb-light': '#fff',
+                'cb-accent': {
+                    DEFAULT: '#8835c3',
+                    dark: '#ffdb4d',
+                },
+                'cb-gray': '#747474',
             },
             borderRadius: {
                 lg: 'var(--radius)',
@@ -106,6 +113,10 @@ const config = {
                     from: { opacity: '1' },
                     to: { opacity: '0' },
                 },
+                'cb-insights-roll': {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-100%)' },
+                },
             },
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
@@ -118,15 +129,34 @@ const config = {
                 enterFromRight: 'enterFromRight 250ms ease',
                 exitToLeft: 'exitToLeft 250ms ease',
                 exitToRight: 'exitToRight 250ms ease',
+                'cb-insights-roll': 'cb-insights-roll 10s infinite linear ',
             },
             // custom user configuration
             bgGradientDeg: {
                 75: '75deg',
             },
+            fontFamily: {
+                manrope: ['var(--font-manrope)'],
+            },
+            fontSize: {
+                '3xs': '0.5rem', // 8px,
+                '2xs': [
+                    '0.625rem', // 10px
+                    {
+                        lineHeight: '0.75rem', // 12px
+                    },
+                ],
+            },
+            screens: {
+                sxl: '1180px', // @media (min-width: 1180px)
+                xs: '480px', // @media (min-width: 480px)
+            },
         },
     },
     plugins: [
         require('tailwindcss-animate'),
+        // require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
         /**
          * resource:
          * [Is there a way to adjust the angle of the linear gradient in Tailwind CSS?](https://stackoverflow.com/questions/71120394/is-there-a-way-to-adjust-the-angle-of-the-linear-gradient-in-tailwind-css)

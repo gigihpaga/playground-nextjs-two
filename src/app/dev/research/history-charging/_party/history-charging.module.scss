@@ -1,0 +1,104 @@
+.tbl-style {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 11px;
+        position: relative;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 2px 4px;
+        text-wrap: nowrap;
+    }
+
+    th {
+        position: sticky;
+        top: 0;
+        box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    }
+
+    tr:nth-child(even) {
+        background-color: rgb(221, 221, 221);
+    }
+
+    th {
+        background-color: rgb(161, 198, 217);
+    }
+
+    th:nth-child(2),
+    th:nth-child(3),
+    th:nth-child(4),
+    th:nth-child(5),
+    th:nth-child(6) {
+        background-color: rgb(134, 191, 158);
+    }
+
+    td:nth-child(2),
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(5),
+    td:nth-child(6) {
+        background-color: rgba(188, 246, 212, 0.2);
+    }
+
+    /*
+    STICKY ROW
+    Normal css box-shadow works for the header as it is a single html element
+    https://codepen.io/mikegolus/pen/jOZzRzw
+    */
+
+    tr.sticky {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: var(--stickyBackground);
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+    }
+
+    /*
+    STICKY COLUMN
+    Avoid undesirable overlapping shadows by creating a faux shadow on the ::after psudo-element instead of using the css box-shadow property.
+    */
+
+    th.sticky,
+    td.sticky {
+        position: sticky;
+        left: 0;
+        background: white;
+    }
+
+    tr:nth-child(even) td.sticky {
+        background-color: rgb(221, 221, 221);
+    }
+
+    th.sticky {
+        z-index: 2;
+    }
+
+    th.sticky::after,
+    td.sticky::after {
+        content: '';
+        position: absolute;
+        right: -6px;
+        top: 0;
+        bottom: -1px;
+        width: 5px;
+        border-left: 1px solid var(--borderColor);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    th.sticky::before,
+    td.sticky::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 0;
+        bottom: -1px;
+        width: 5px;
+        border-right: 1px solid var(--borderColor);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.08) 100%);
+    }
+}

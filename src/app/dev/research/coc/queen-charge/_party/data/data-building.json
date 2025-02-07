@@ -1,0 +1,561 @@
+[
+    {
+        "name": "Barbarian King",
+        "entityId": 61,
+        "entityTypeId": 9,
+        "entityTypeName": "hero",
+        "slug": "barbarian_king",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/61.png",
+        "imageUrl": "/images/coc-building/61.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Archer Queen",
+        "entityId": 62,
+        "entityTypeId": 9,
+        "entityTypeName": "hero",
+        "slug": "archer_queen",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/62.png",
+        "imageUrl": "/images/coc-building/62.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Blacksmith",
+        "entityId": 152,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "blacksmith",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/152_7.png",
+        "imageUrl": "/images/coc-building/152_7.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Barracks",
+        "entityId": 8,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "barracks",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/8_16.png",
+        "imageUrl": "/images/coc-building/8_16.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Dark Barracks",
+        "entityId": 9,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "dark_barracks",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/9_11.png",
+        "imageUrl": "/images/coc-building/9_11.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Spell Factory",
+        "entityId": 11,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "spell_factory",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/11_7.png",
+        "imageUrl": "/images/coc-building/11_7.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Grand Warden",
+        "entityId": 63,
+        "entityTypeId": 9,
+        "entityTypeName": "hero",
+        "slug": "grand_warden",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/63.png",
+        "imageUrl": "/images/coc-building/63.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Air Bomb",
+        "entityId": 26,
+        "entityTypeId": 4,
+        "entityTypeName": "traps",
+        "slug": "air_bomb",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/26_9.png",
+        "imageUrl": "/images/coc-building/26_9.png",
+        "size": {
+            "w": 1,
+            "h": 1
+        }
+    },
+    {
+        "name": "Giant Bomb",
+        "entityId": 28,
+        "entityTypeId": 4,
+        "entityTypeName": "traps",
+        "slug": "giant_bomb",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/28_8.png",
+        "imageUrl": "/images/coc-building/28_8.png",
+        "size": {
+            "w": 2,
+            "h": 2
+        }
+    },
+    {
+        "name": "Hidden Tesla",
+        "entityId": 21,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "hidden_tesla",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/21_13.png",
+        "imageUrl": "/images/coc-building/21_13.png",
+        "size": {
+            "w": 2,
+            "h": 2
+        }
+    },
+    {
+        "name": "Spring Trap",
+        "entityId": 30,
+        "entityTypeId": 4,
+        "entityTypeName": "traps",
+        "slug": "spring_trap",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/30_5.png",
+        "imageUrl": "/images/coc-building/30_5.png",
+        "size": {
+            "w": 1,
+            "h": 1
+        }
+    },
+    {
+        "name": "Seeking Air Mine",
+        "entityId": 29,
+        "entityTypeId": 4,
+        "entityTypeName": "traps",
+        "slug": "seeking_air_mine",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/29_4.png",
+        "imageUrl": "/images/coc-building/29_4.png",
+        "size": {
+            "w": 1,
+            "h": 1
+        }
+    },
+    {
+        "name": "Inferno Tower",
+        "entityId": 22,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "inferno_tower",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/22_8.png",
+        "imageUrl": "/images/coc-building/22_8.png",
+        "size": {
+            "w": 2,
+            "h": 2
+        }
+    },
+    {
+        "name": "Gold Mine",
+        "entityId": 2,
+        "entityTypeId": 3,
+        "entityTypeName": "resources",
+        "slug": "gold_mine",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/2_16.png",
+        "imageUrl": "/images/coc-building/2_16.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Elixir Collector",
+        "entityId": 3,
+        "entityTypeId": 3,
+        "entityTypeName": "resources",
+        "slug": "elixir_collector",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/3_16.png",
+        "imageUrl": "/images/coc-building/3_16.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Dark Elixir Drill",
+        "entityId": 4,
+        "entityTypeId": 3,
+        "entityTypeName": "resources",
+        "slug": "dark_elixir_drill",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/4_10.png",
+        "imageUrl": "/images/coc-building/4_10.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Gold Storage",
+        "entityId": 5,
+        "entityTypeId": 3,
+        "entityTypeName": "resources",
+        "slug": "gold_storage",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/5_15.png",
+        "imageUrl": "/images/coc-building/5_15.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Elixir Storage",
+        "entityId": 6,
+        "entityTypeId": 3,
+        "entityTypeName": "resources",
+        "slug": "elixir_storage",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/6_15.png",
+        "imageUrl": "/images/coc-building/6_15.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Dark Elixir Storage",
+        "entityId": 7,
+        "entityTypeId": 3,
+        "entityTypeName": "resources",
+        "slug": "dark_elixir_storage",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/7_9.png",
+        "imageUrl": "/images/coc-building/7_9.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Army Camp",
+        "entityId": 10,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "army_camp",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/10_11.png",
+        "imageUrl": "/images/coc-building/10_11.png",
+        "size": {
+            "w": 4,
+            "h": 4
+        }
+    },
+    {
+        "name": "Dark Spell Factory",
+        "entityId": 12,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "dark_spell_factory",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/12_6.png",
+        "imageUrl": "/images/coc-building/12_6.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Lab",
+        "entityId": 13,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "lab",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/13_12.png",
+        "imageUrl": "/images/coc-building/13_12.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Air Defense",
+        "entityId": 14,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "air_defense",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/14_12.png",
+        "imageUrl": "/images/coc-building/14_12.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Archer Tower",
+        "entityId": 16,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "archer_tower",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/16_20.png",
+        "imageUrl": "/images/coc-building/16_20.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Bomb Tower",
+        "entityId": 17,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "bomb_tower",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/17_9.png",
+        "imageUrl": "/images/coc-building/17_9.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Cannon",
+        "entityId": 18,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "cannon",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/18_20.png",
+        "imageUrl": "/images/coc-building/18_20.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Clan Castle",
+        "entityId": 19,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "clan_castle",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/19_10.png",
+        "imageUrl": "/images/coc-building/19_10.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Eagle Artillery",
+        "entityId": 20,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "eagle_artillery",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/20_5.png",
+        "imageUrl": "/images/coc-building/20_5.png",
+        "size": {
+            "w": 4,
+            "h": 4
+        }
+    },
+    {
+        "name": "Mortar",
+        "entityId": 23,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "mortar",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/23_14.png",
+        "imageUrl": "/images/coc-building/23_14.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Wizard Tower",
+        "entityId": 24,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "wizard_tower",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/24_14.png",
+        "imageUrl": "/images/coc-building/24_14.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "X-Bow",
+        "entityId": 25,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "x_bow",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/25_9.png",
+        "imageUrl": "/images/coc-building/25_9.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Workshop",
+        "entityId": 104,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "workshop",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/104_6.png",
+        "imageUrl": "/images/coc-building/104_6.png",
+        "size": {
+            "w": 4,
+            "h": 4
+        }
+    },
+    {
+        "name": "Tornado Trap",
+        "entityId": 108,
+        "entityTypeId": 4,
+        "entityTypeName": "traps",
+        "slug": "tornado_trap",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/108_3.png",
+        "imageUrl": "/images/coc-building/108_3.png",
+        "size": {
+            "w": 1,
+            "h": 1
+        }
+    },
+    {
+        "name": "Bomb",
+        "entityId": 27,
+        "entityTypeId": 4,
+        "entityTypeName": "traps",
+        "slug": "bomb",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/27_10.png",
+        "imageUrl": "/images/coc-building/27_10.png",
+        "size": {
+            "w": 1,
+            "h": 1
+        }
+    },
+    {
+        "name": "Scattershot",
+        "entityId": 119,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "scattershot",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/119_3.png",
+        "imageUrl": "/images/coc-building/119_3.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Royal Champion",
+        "entityId": 122,
+        "entityTypeId": 9,
+        "entityTypeName": "hero",
+        "slug": "royal_champion",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/122.png",
+        "imageUrl": "/images/coc-building/122.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Skeleton Trap",
+        "entityId": 64,
+        "entityTypeId": 4,
+        "entityTypeName": "traps",
+        "slug": "skeleton_trap",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/64_4.png",
+        "imageUrl": "/images/coc-building/64_4.png",
+        "size": {
+            "w": 1,
+            "h": 1
+        }
+    },
+    {
+        "name": "Air Sweeper",
+        "entityId": 15,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "air_sweeper",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/15_7.png",
+        "imageUrl": "/images/coc-building/15_7.png",
+        "size": {
+            "w": 2,
+            "h": 2
+        }
+    },
+    {
+        "name": "Town Hall",
+        "entityId": 1,
+        "entityTypeId": 10,
+        "entityTypeName": "town hall",
+        "slug": "town_hall",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/1_15.png",
+        "imageUrl": "/images/coc-building/1_15.png",
+        "size": {
+            "w": 4,
+            "h": 4
+        }
+    },
+    {
+        "name": "Giga Inferno (TH14)",
+        "entityId": 126,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "giga_inferno__th14_",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/126_5.png",
+        "imageUrl": "/images/coc-building/126_5.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Builder Hut",
+        "entityId": 127,
+        "entityTypeId": 2,
+        "entityTypeName": "defences",
+        "slug": "builder_hut",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/127_4.png",
+        "imageUrl": "/images/coc-building/127_4.png",
+        "size": {
+            "w": 2,
+            "h": 2
+        }
+    },
+    {
+        "name": "Pet House",
+        "entityId": 128,
+        "entityTypeId": 1,
+        "entityTypeName": "army",
+        "slug": "pet_house",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/128_4.png",
+        "imageUrl": "/images/coc-building/128_4.png",
+        "size": {
+            "w": 3,
+            "h": 3
+        }
+    },
+    {
+        "name": "Wall",
+        "entityId": 60,
+        "entityTypeId": 9999999999,
+        "entityTypeName": "wall",
+        "slug": "wall",
+        "imageUrlOriginal": "https://www.clash.ninja/images/entities/60_15.png",
+        "imageUrl": "/images/coc-building/60_15.png",
+        "size": {
+            "w": 1,
+            "h": 1
+        }
+    }
+]

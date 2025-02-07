@@ -1,0 +1,398 @@
+[
+    {
+        "name": "Cannon",
+        "slug": "cannon",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Cannon/Home_Village"
+    },
+    {
+        "name": "Archer Tower",
+        "slug": "archer_tower",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Archer_Tower/Home_Village"
+    },
+    {
+        "name": "Mortar",
+        "slug": "mortar",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Mortar"
+    },
+    {
+        "name": "Air Defense",
+        "slug": "air_defense",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Air_Defense/Home_Village"
+    },
+    {
+        "name": "Wizard Tower",
+        "slug": "wizard_tower",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Wizard_Tower"
+    },
+    {
+        "name": "Air Sweeper",
+        "slug": "air_sweeper",
+        "size": {
+            "w": 2,
+            "h": 2
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Air_Sweeper"
+    },
+    {
+        "name": "Hidden Tesla",
+        "slug": "hidden_tesla",
+        "size": {
+            "w": 2,
+            "h": 2
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Hidden_Tesla/Home_Village"
+    },
+    {
+        "name": "Bomb Tower",
+        "slug": "bomb_tower",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Bomb_Tower/Home_Village"
+    },
+    {
+        "name": "X-Bow",
+        "slug": "x_bow",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/X-Bow/Home_Village"
+    },
+    {
+        "name": "Inferno Tower",
+        "slug": "inferno_tower",
+        "size": {
+            "w": 2,
+            "h": 2
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Inferno_Tower/Home_Village"
+    },
+    {
+        "name": "Eagle Artillery",
+        "slug": "eagle_artillery",
+        "size": {
+            "w": 4,
+            "h": 4
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Eagle_Artillery"
+    },
+    {
+        "name": "Scattershot",
+        "slug": "scattershot",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Scattershot"
+    },
+    {
+        "name": "Builder's Hut",
+        "slug": "builder_s_hut",
+        "size": {
+            "w": 2,
+            "h": 2
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Builder%27s_Hut"
+    },
+    {
+        "name": "Spell Tower",
+        "slug": "spell_tower",
+        "size": {
+            "w": 2,
+            "h": 2
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Spell_Tower"
+    },
+    {
+        "name": "Monolith",
+        "slug": "monolith",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Monolith"
+    },
+    {
+        "name": "Ricochet Cannon",
+        "slug": "ricochet_cannon",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Ricochet_Cannon"
+    },
+    {
+        "name": "Multi-Archer Tower",
+        "slug": "multi_archer_tower",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Multi-Archer_Tower"
+    },
+    {
+        "name": "Wall",
+        "slug": "wall",
+        "size": {
+            "w": 1,
+            "h": 1
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Wall/Home_Village"
+    },
+    {
+        "name": "Bomb",
+        "slug": "bomb",
+        "size": {
+            "w": 1,
+            "h": 1
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Bomb"
+    },
+    {
+        "name": "Spring Trap",
+        "slug": "spring_trap",
+        "size": {
+            "w": 1,
+            "h": 1
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Spring_Trap/Home_Village"
+    },
+    {
+        "name": "Air Bomb",
+        "slug": "air_bomb",
+        "size": {
+            "w": 1,
+            "h": 1
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Air_Bomb"
+    },
+    {
+        "name": "Giant Bomb",
+        "slug": "giant_bomb",
+        "size": {
+            "w": 2,
+            "h": 2
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Giant_Bomb"
+    },
+    {
+        "name": "Seeking Air Mine",
+        "slug": "seeking_air_mine",
+        "size": {
+            "w": 1,
+            "h": 1
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Seeking_Air_Mine"
+    },
+    {
+        "name": "Skeleton Trap",
+        "slug": "skeleton_trap",
+        "size": {
+            "w": 1,
+            "h": 1
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Skeleton_Trap"
+    },
+    {
+        "name": "Tornado Trap",
+        "slug": "tornado_trap",
+        "size": {
+            "w": 1,
+            "h": 1
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Tornado_Trap"
+    },
+    {
+        "name": "Town Hall",
+        "slug": "town_hall",
+        "size": {
+            "w": 4,
+            "h": 4
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Town_Hall"
+    },
+    {
+        "name": "Gold Mine",
+        "slug": "gold_mine",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Gold_Mine/Home_Village"
+    },
+    {
+        "name": "Elixir Collector",
+        "slug": "elixir_collector",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Elixir_Collector/Home_Village"
+    },
+    {
+        "name": "Dark Elixir Drill",
+        "slug": "dark_elixir_drill",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Dark_Elixir_Drill"
+    },
+    {
+        "name": "Gold Storage",
+        "slug": "gold_storage",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Gold_Storage/Home_Village"
+    },
+    {
+        "name": "Elixir Storage",
+        "slug": "elixir_storage",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Elixir_Storage/Home_Village"
+    },
+    {
+        "name": "Dark Elixir Storage",
+        "slug": "dark_elixir_storage",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Dark_Elixir_Storage"
+    },
+    {
+        "name": "Clan Castle",
+        "slug": "clan_castle",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Clan_Castle"
+    },
+    {
+        "name": "Army Camp",
+        "slug": "army_camp",
+        "size": {
+            "w": 4,
+            "h": 4
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Army_Camp/Home_Village"
+    },
+    {
+        "name": "Barracks",
+        "slug": "barracks",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Barracks"
+    },
+    {
+        "name": "Dark Barracks",
+        "slug": "dark_barracks",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Dark_Barracks"
+    },
+    {
+        "name": "Laboratory",
+        "slug": "laboratory",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Laboratory"
+    },
+    {
+        "name": "Spell Factory",
+        "slug": "spell_factory",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Spell_Factory"
+    },
+    {
+        "name": "Dark Spell Factory",
+        "slug": "dark_spell_factory",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Dark_Spell_Factory"
+    },
+    {
+        "name": "Blacksmith",
+        "slug": "blacksmith",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Blacksmith"
+    },
+    {
+        "name": "Workshop",
+        "slug": "workshop",
+        "size": {
+            "w": 4,
+            "h": 4
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Workshop"
+    },
+    {
+        "name": "Pet House",
+        "slug": "pet_house",
+        "size": {
+            "w": 3,
+            "h": 3
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Pet_House"
+    },
+    {
+        "name": "Builder's Hut",
+        "slug": "builder_s_hut",
+        "size": {
+            "w": 2,
+            "h": 2
+        },
+        "url": "https://clashofclans.fandom.com//wiki/Builder%27s_Hut"
+    },
+    {
+        "name": "B.O.B's Hut",
+        "slug": "b_o_b_s_hut",
+        "size": {
+            "w": 2,
+            "h": 2
+        },
+        "url": "https://clashofclans.fandom.com//wiki/B.O.B%27s_Hut"
+    }
+]

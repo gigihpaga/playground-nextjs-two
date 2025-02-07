@@ -8,6 +8,8 @@ import indexedDBStorage from '@piotr-cz/redux-persist-idb-storage';
 
 //* reducers
 import { pwuPostReducer } from '@/app/dev/tutorial/programming-with-umair/integrate-redux-toolkit/_party/state/post-slice';
+import { cocLayoutCollectionReducer } from '@/app/dev/research/coc/queen-charge/_party/state/layout-collection-slice';
+import { cocAttackCollectionReducer } from '@/app/dev/research/coc/queen-charge/_party/state/attack-collection-slice';
 
 /**
  * persist article
@@ -26,7 +28,33 @@ const pwuPostPersistConfig = {
     storage: localStorage, // local storage
 };
 
+const cocLayoutCollectionConfig = {
+    key: 'cocLayoutCollection',
+    whitelist: ['layoutState', 'layoutSelected'],
+    // storage: localStorage,
+    storage: indexedDBStorage({ name: 'coc-layout-collection', storeName: 'keyval' }),
+    serialize: false,
+    // @ts-ignore
+    deserialize: false,
+};
+
+const cocAttackCollectionConfig = {
+    key: 'cocAttackCollection',
+    whitelist: ['attacCollectionkState', 'attackIdActive'],
+    // storage: localStorage,
+    storage: indexedDBStorage({ name: 'coc-attack-collection', storeName: 'keyval' }),
+    serialize: false,
+    // @ts-ignore
+    deserialize: false,
+};
+
 export const rootReducer = combineReducers({
     pwuPost: persistReducer(pwuPostPersistConfig, pwuPostReducer),
     // pwuPost: pwuPostReducer,
+
+    cocLayoutCollection: persistReducer(cocLayoutCollectionConfig, cocLayoutCollectionReducer),
+    // cocLayoutCollection: cocLayoutCollectionReducer,
+
+    cocAttackCollection: persistReducer(cocAttackCollectionConfig, cocAttackCollectionReducer),
+    // cocAttackCollection: cocAttackCollectionReducer,
 });

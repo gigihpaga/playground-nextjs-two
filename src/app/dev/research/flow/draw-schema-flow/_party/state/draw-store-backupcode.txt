@@ -1,0 +1,153 @@
+onNodesChange: (changes) => {
+                set({
+                    nodes: applyNodeChanges(changes, get().nodes),
+                });
+            },
+            onEdgesChange: (changes: EdgeChange<CustomEdgeType>[]) => {
+                set({
+                    edges: applyEdgeChanges(changes, get().edges),
+                });
+            },
+            onConnect: (connection) => {
+                const newEdge: Connection | EdgeBase = {
+                    ...connection,
+                    animated: true,
+                    id: `${connection.source}__${connection.target}`,
+                    type: 'EdgeCustom1',
+                    markerEnd: {
+                        type: MarkerType.ArrowClosed,
+                    },
+                };
+                set({
+                    edges: addEdge(newEdge, get().edges),
+                });
+            },
+            setNodes: (nodes) => {
+                set({ nodes });
+            },
+            setEdges: (edges /* : Edge[] */) => {
+                set({ edges });
+            },
+            addNode: (node: Omit<CustomNodeType, 'id'>) => {
+                const newNode = {
+                    ...node,
+                    id: `${node.type ?? 'NODE'}_${nanoid()}`,
+                } satisfies CustomNodeType;
+
+                set({ nodes: [...get().nodes, newNode] });
+            },
+            addChildNode: (parentNode, position) => {
+                const newNode: CustomNodeType = {
+                    id: nanoid(),
+                    type: 'mindmap',
+                    data: {
+                        label: 'New Node',
+                    },
+                    position,
+                    parentId: parentNode.id,
+                };
+
+                const newEdge = {
+                    id: nanoid(),
+                    source: parentNode.id,
+                    target: newNode.id,
+                };
+
+                set({
+                    nodes: [...get().nodes, newNode],
+                    edges: [...get().edges, newEdge],
+                });
+            },
+            updateNodeLabel: (nodeId: string, label: string) => {
+                set({
+                    nodes: get().nodes.map((node) => {
+                        if (node.id === nodeId) {
+                            // it's important to create a new object here, to inform React Flow about the changes
+                            node.data = { ...node.data, label };
+                        }
+
+                        return node;
+                    }),
+                });
+            },
+            updateText: (nodeId: string, text: string) => {
+                console.log('draw-store/updateText');
+                const newNodes = [...get().nodes];
+
+                const nodeIndex = newNodes.findIndex((node) => node.id === nodeId);
+                if (nodeIndex !== -1) {
+                    if ('text' in newNodes[nodeIndex].data) {
+                        newNodes[nodeIndex].data = {
+                            ...newNodes[nodeIndex].data,
+                            text: text,
+                        };
+                        set({ nodes: newNodes });
+                    }
+                }
+            },
+            updateLuffy: (nodeId: string, fields: Omit<NodeLuffyProps['data'], 'theme'>) => {
+                /* console.log('draw-store/updateText');
+                const newNodes = [...get().nodes];
+                const nodeIndex = newNodes.findIndex((node) => node.id === nodeId);
+                if (nodeIndex !== -1) {
+                    newNodes[nodeIndex].data = {
+                        ...newNodes[nodeIndex].data,
+                        ...fields,
+                    };
+                    set({ nodes: newNodes });
+                } */
+
+                set({
+                    nodes: get().nodes.map((node) => {
+                        if (node.id === nodeId && node.type === 'NodeLuffy') {
+                            return {
+                                ...node,
+                                data: {
+                                    ...node.data,
+                                    ...fields,
+                                },
+                            };
+                        }
+                        return node;
+                    }),
+                });
+            },
+            getNodesSeleteds: () => {
+                return get().nodes.filter((node) => node.selected === true);
+            },
+            updateNodesColor: ({ ids, theme }: { ids: Array<CustomNodeType['id']>; theme: BaseShapeVariants['theme'] }) => {
+                const newNodes = [...get().nodes];
+                console.log('draw-store/updateNodesColor', { ids, theme });
+                ids.forEach((id) => {
+                    /* const nodeIndex = newNodes.findIndex((node) => node.id === id);
+                    const nodeUpdated = newNodes[nodeIndex];
+                    if (nodeUpdated.selected === true) {
+                        if ('theme' in nodeUpdated.data && typeof nodeUpdated.data.theme === 'string') {
+                            newNodes[nodeIndex].data = {
+                                ...nodeUpdated.data,
+                                theme: theme,
+                            };
+                            set({ nodes: [...newNodes] });
+                        }
+                    } */
+                    /**
+                     * harus pakai cara yang dibawah ini,
+                     * kalo pakai cara yang diatas, nodes dapat di perbarui, react flow sudah re-render.
+                     * TAPI node di UI telat re-render, jadi user harus un-select dulu baru ke trigger re-render
+                     */
+                    set({
+                        nodes: get().nodes.map((node) => {
+                            if (node.id === id) {
+                                return {
+                                    ...node,
+                                    data: {
+                                        ...node.data,
+                                        theme: theme,
+                                    },
+                                };
+                            }
+                            return node;
+                        }),
+                    });
+                });
+            },

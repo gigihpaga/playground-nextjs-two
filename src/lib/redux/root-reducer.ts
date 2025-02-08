@@ -10,6 +10,7 @@ import indexedDBStorage from '@piotr-cz/redux-persist-idb-storage';
 import { pwuPostReducer } from '@/app/dev/tutorial/programming-with-umair/integrate-redux-toolkit/_party/state/post-slice';
 import { cocLayoutCollectionReducer } from '@/app/dev/research/coc/queen-charge/_party/state/layout-collection-slice';
 import { cocAttackCollectionReducer } from '@/app/dev/research/coc/queen-charge/_party/state/attack-collection-slice';
+import { drawSchemaFlowReducer } from '@/app/dev/research/flow/draw-schema-flow/_party/state/draw-schema-flow-slice';
 
 /**
  * persist article
@@ -57,4 +58,6 @@ export const rootReducer = combineReducers({
 
     cocAttackCollection: persistReducer(cocAttackCollectionConfig, cocAttackCollectionReducer),
     // cocAttackCollection: cocAttackCollectionReducer,
+
+    drawSchemaFlow: drawSchemaFlowReducer,
 });

@@ -11,6 +11,10 @@ import { pwuPostReducer } from '@/app/dev/tutorial/programming-with-umair/integr
 import { cocLayoutCollectionReducer } from '@/app/dev/research/coc/queen-charge/_party/state/layout-collection-slice';
 import { cocAttackCollectionReducer } from '@/app/dev/research/coc/queen-charge/_party/state/attack-collection-slice';
 import { drawSchemaFlowReducer } from '@/app/dev/research/flow/draw-schema-flow/_party/state/draw-schema-flow-slice';
+import {
+    gitCommitTopicCollectionReducer,
+    type CommitTopicCollectionState,
+} from '@/app/dev/research/git/commit-topic/_party/state/commit-topic-collection-slice';
 
 /**
  * persist article
@@ -49,6 +53,19 @@ const cocAttackCollectionConfig = {
     deserialize: false,
 };
 
+const gitCommitTopicCollectionConfig: PersistConfig<CommitTopicCollectionState> = {
+    key: 'gitCommitTopicCollection',
+    whitelist: ['workspaceTopics', 'workspaceTopicActive'],
+    // storage: localStorage,
+    // storage: IndexeddbStorage_('git-commit-topic-collection'),
+    // eslint-disable-next-line no-undef
+    storage: indexedDBStorage({ name: 'git-commit-topic-collection', storeName: 'keyval' }),
+    serialize: false,
+    // @ts-ignore
+    deserialize: false,
+    version: 1,
+};
+
 export const rootReducer = combineReducers({
     pwuPost: persistReducer(pwuPostPersistConfig, pwuPostReducer),
     // pwuPost: pwuPostReducer,
@@ -60,4 +77,7 @@ export const rootReducer = combineReducers({
     // cocAttackCollection: cocAttackCollectionReducer,
 
     drawSchemaFlow: drawSchemaFlowReducer,
+
+    // gitCommitTopicCollection: gitCommitTopicCollectionReducer,
+    gitCommitTopicCollection: persistReducer(gitCommitTopicCollectionConfig, gitCommitTopicCollectionReducer),
 });

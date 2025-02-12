@@ -4,7 +4,7 @@ import { useState, type FormEvent, type MouseEvent } from 'react';
 import styles from '../page.module.scss';
 
 import { useAppSelector, useAppDispatch } from '@/lib/redux/hooks';
-import { addPost, deletePost, selectPostByTitle, selectAllPost } from '@/lib/redux/slices/tutorial/programming-with-umair/post-slice';
+import { addPost, deletePost, selectPostByTitle, selectAllPost } from '../state/post-slice';
 
 export function Post() {
     const [title, setTitle] = useState('');

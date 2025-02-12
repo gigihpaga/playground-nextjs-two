@@ -9,6 +9,7 @@ export const ContextMenu = forwardRef<HTMLDivElement, React.HtmlHTMLAttributes<H
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
+            ref={ref}
             className={cn('context-menu bg-background border shadow-lg absolute z-50 flex flex-col min-w-[8rem] rounded-md p-1 gap-y-1', className)}
             // aria-description="context menu node"
             {...props}
@@ -47,7 +48,7 @@ export function DropdownGroup({ label, children, className, ...props }: Dropdown
                 data-state={String(isOpen)}
                 className={cn(
                     'p-1 absolute bg-background w-full top-0 rounded',
-                    isOpen ? '-right-[100%] opacity-100 h-fit block' : '-right-[0%] opacity-0 h-0 hidden'
+                    isOpen ? 'left-[100%] opacity-100 h-fit block' : 'left-[0%] opacity-0 h-0 hidden'
                 )}
             >
                 {children}

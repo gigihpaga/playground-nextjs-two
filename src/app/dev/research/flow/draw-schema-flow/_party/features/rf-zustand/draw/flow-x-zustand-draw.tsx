@@ -342,6 +342,16 @@ export function getCalculatePositionContextMenu({
     /** height element context menu */
     menuHeight: number;
 }) {
+    const top = event.clientY - pane.top;
+    const left = event.clientX - pane.left;
+    return {
+        top: top < 0 ? 0 : top + menuHeight > pane.height ? pane.height - menuHeight : top,
+        left: left < 0 ? 0 : left + menuWidth > pane.width ? pane.width - menuWidth : left,
+        right: undefined,
+        bottom: undefined,
+    };
+
+    // eslint-disable-next-line no-unreachable
     return {
         /** punya paga
         top: event.clientY < pane.height - 25 ? event.clientY - pane.top : undefined,

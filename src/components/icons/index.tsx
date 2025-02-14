@@ -7,7 +7,7 @@ export const LoadingElipseIcon = ({ className, ...props }: SVGProps<SVGSVGElemen
         width={200}
         height={200}
         preserveAspectRatio="xMidYMid"
-        className={cn('size-6 fill-gray-800 _bg-yellow-600', className)}
+        className={cn('size-6 fill-[hsla(0,0%,56%)] _bg-yellow-600', className)}
         style={{
             shapeRendering: 'auto',
             display: 'block',

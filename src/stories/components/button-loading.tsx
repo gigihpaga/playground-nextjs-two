@@ -14,7 +14,7 @@ export function ButtonLoading() {
             className="size-7 _flex-shrink-0 text-xs p-0 flex"
             onClick={() => void console.log('halo')}
         >
-            {isLoading === false ? <LoadingElipseIcon className="size-4 fill-white" /> : <UploadIcon className="size-3 " />}
+            {isLoading === false ? <LoadingElipseIcon className="size-4" /> : <UploadIcon className="size-3 " />}
         </Button>
     );
 }

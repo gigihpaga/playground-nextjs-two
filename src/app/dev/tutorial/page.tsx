@@ -2,6 +2,8 @@ import { getPathFilePage } from '@/utils/get-path-file-page';
 import { getDirName } from '@/utils/get-dirname';
 import { EachList } from '@/components/ui/custom/each-list';
 
+export const dynamic = 'force-static';
+
 export default async function TutorialPage() {
     const __dirname = getDirName(import.meta.url);
     const pathPages = await getPathFilePage(__dirname);

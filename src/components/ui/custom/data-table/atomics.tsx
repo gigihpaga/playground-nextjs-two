@@ -131,12 +131,19 @@ export function DataTableColumnHeader<TData, TValue>({ column, title, className 
     );
 }
 
+type DataTableColumnHeaderWithFilterProps<TData, TValue> = DataTableColumnHeaderProps<TData, TValue> & {
+    filterComponent?: (args: {
+        column: DataTableColumnHeaderProps<TData, TValue>['column'];
+        title: DataTableColumnHeaderProps<TData, TValue>['title'];
+    }) => React.ReactElement;
+};
+
 export function DataTableColumnHeaderWithFilter<TData, TValue>({
     column,
     title,
     className,
     filterComponent,
-}: DataTableColumnHeaderProps<TData, TValue> & { filterComponent?: ReactElement }) {
+}: DataTableColumnHeaderWithFilterProps<TData, TValue>) {
     // console.log(`DataTableColumnHeaderWithFilter ${column.id}`, column.getFilterValue());
 
     if (!column.getCanSort()) {
@@ -195,8 +202,8 @@ export function DataTableColumnHeaderWithFilter<TData, TValue>({
                 </DropdownMenu>
                 {/* {column.getCanFilter() && <Filter column={column} />} */}
                 {column.getCanFilter() ? (
-                    filterComponent && React.isValidElement(filterComponent) ? (
-                        <>{filterComponent}</>
+                    filterComponent instanceof Function ? (
+                        filterComponent({ column: column, title: title })
                     ) : (
                         // <Filter column={column} />
                         <DataTableFacetedFilter
@@ -706,9 +713,11 @@ export function DataTableViewOptions<TData>({ table, trigger }: DataTableViewOpt
 export interface DataTableViewProps<TData, TValue> extends React.HTMLAttributes<HTMLTableElement> {
     table: DataTableInstance<TData>;
     columns: ColumnDef<TData, TValue>[];
+    /** default false */
+    footer?: boolean;
 }
 
-export function DataTableView<TData, TValue>({ table, columns, className, ...props }: DataTableViewProps<TData, TValue>) {
+export function DataTableView<TData, TValue>({ table, columns, className, footer = false, ...props }: DataTableViewProps<TData, TValue>) {
     // [&_thead]:sticky [&_thead]:top-0 [&_thead]:bg-background [&_thead]:z-[1] [&_thead_tr:hover]:bg-inherit
     return (
         <Table
@@ -758,6 +767,22 @@ export function DataTableView<TData, TValue>({ table, columns, className, ...pro
                     </TableRow>
                 )}
             </TableBody>
+            {footer === true ? (
+                <TableFooter>
+                    {table.getFooterGroups().map((footerGroup) => (
+                        <TableRow key={footerGroup.id}>
+                            {footerGroup.headers.map((header) => (
+                                <TableHead
+                                    key={header.id}
+                                    colSpan={header.colSpan}
+                                >
+                                    {header.isPlaceholder ? null : flexRender(header.column.columnDef.footer, header.getContext())}
+                                </TableHead>
+                            ))}
+                        </TableRow>
+                    ))}
+                </TableFooter>
+            ) : null}
         </Table>
     );
 }

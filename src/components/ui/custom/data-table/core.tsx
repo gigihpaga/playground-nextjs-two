@@ -62,7 +62,9 @@ function DataTable<TData extends RowData, TValue>(_props: DataTableProps<TData, 
     const { ...restTableOptios } = tableOptios;
 
     const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({});
-    const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
+    const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>(
+        tableOptios.initialState?.columnVisibility ? { ...tableOptios.initialState?.columnVisibility } : {}
+    );
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [globalFilter, setGlobalFilter] = React.useState<string>('');
@@ -189,6 +191,7 @@ export {
     // deps
     flexRender,
     type Row,
+    type RowData,
     type ColumnDef,
     type DataTableInstance,
 };

@@ -8,6 +8,7 @@ export {
     // deps
     flexRender,
     type Row,
+    type RowData,
     type ColumnDef,
     type DataTableInstance,
 } from './core';

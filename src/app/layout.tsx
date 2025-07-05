@@ -27,7 +27,7 @@ export default function RootLayout({
                 <Providers>
                     <div className="flex min-h-screen w-full flex-col">
                         <NavBar />
-                        <main className="flex flex-grow w-full">{children}</main>
+                        <main className="flex min-h-0 flex-grow w-full">{children}</main>
                     </div>
                 </Providers>
             </body>

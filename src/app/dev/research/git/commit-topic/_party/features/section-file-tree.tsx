@@ -9,6 +9,7 @@ import {
     BookXIcon,
     FileClockIcon,
     FileXIcon,
+    FolderGit2,
     FolderSyncIcon,
     Grid2x2XIcon,
     ListIcon,
@@ -40,6 +41,7 @@ import { Separator } from '@/components/ui/separator';
 import { DropdownTopic } from '../components/tree-view';
 import { FileCard } from '../components/file-card';
 import { DialogHistoryCommitOfFile } from './dialog-history-commit-of-file';
+import { DialogHistoryCommitOfFileByFolder } from './dialog-history-commit-of-file-by-folder';
 import { TreeViewDynamic } from '../components/tree-view-dynamic';
 import { FilePathCard } from '../components/file-path-card';
 import { useDebounceText } from '@/hooks/use-debounce-text';
@@ -139,6 +141,17 @@ export default function SectionFileTrees({ itemsTree }: { itemsTree: FileGit<Unt
                                 title="history commit of file"
                             >
                                 <FileClockIcon className="size-3" />
+                            </Button>
+                        }
+                    />
+                    <DialogHistoryCommitOfFileByFolder
+                        trigger={
+                            <Button
+                                className="h-fit w-fit p-1"
+                                size="sm"
+                                title="history commit of file by folder"
+                            >
+                                <FolderGit2 className="size-3" />
                             </Button>
                         }
                     />

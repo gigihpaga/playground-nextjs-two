@@ -94,6 +94,7 @@ const PackageValue = [
     'redux-toolkit',
     'contentlayer',
     'xyflow/react or reactflow',
+    'react-zoom-pan-pinch',
 ] as const;
 
 export type Book = {
@@ -471,6 +472,22 @@ export const tutorial: Tutorial[] = [
                 urlResources: ['https://github.com/usmanabdurrehman/react-flow-tutorials'],
                 tags: ['Flow'],
                 packages: ['xyflow/react or reactflow'],
+            },
+        ],
+    },
+    {
+        instructorName: 'amr shadid',
+        urlBase: '/dev/tutorial/amr-shadid',
+        books: [
+            {
+                title: 'React zoom and pan with draggable elements',
+                description: 'zoom and pan with drag and drop',
+                urlCode: '/zoom-pan-drag',
+                titleTutorial: 'This React Library Blew My Mind - React Flow Course in 30 minutes',
+                urlTutorial: 'https://dev.to/amrshadid/react-zoom-and-pan-with-draggable-elements-4mn8',
+                urlResources: ['https://github.com/amrshadid/sqlbuilder-tool'],
+                tags: ['Drag and Drop'],
+                packages: ['react-zoom-pan-pinch'],
             },
         ],
     },

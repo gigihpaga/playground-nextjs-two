@@ -11,7 +11,7 @@
     ],
     "plugins": ["react", "react-hooks", "jsx-a11y", "prettier", "@tanstack/query"],
     "rules": {
-        "quotes": ["warn", "single"],
+        "quotes": ["warn", "single", { "avoidEscape": true }],
         "semi": ["warn", "always"],
         "no-unused-vars": [
             "off",

@@ -3,6 +3,17 @@
 import { useEffect, useRef } from 'react';
 import { indicatorLine, SIZE_SHAPE } from '../constants';
 
+/**
+ * komponen background (canvas) untuk drag and drop, untuk memudahkan user mengidikasi label petak pada board
+ * komponent ini hanya untuk backgroud, untuk fungsionalitas drag and drop berada pada komponen kontainer yang menggunakan komponen BoardCanvasGuide
+ * jumlah petak setiap baris dan kolom sama dengan panjang array indicatorLine, dimana indicatorLine berupa array dengan value string abjad a,b,c...,at.
+ * artinya ada 46 petak disetiap baris dan kolomnya.
+ * untuk label pada petak kombinasi angka dan abjad dari value indicatorLine
+ * contoh:
+ * baris pertama kolom pertama - baris pertama kolom terakhir: 1a,1b,1c,...,1at (horizontal)
+ * kolom pertama baris pertama - kolom pertama baris terakhir: 1a,2a,3a,...,46a (vertical)
+ * @returns
+ */
 export function BoardCanvasGuide() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     useEffect(function initialBoardCanvas() {

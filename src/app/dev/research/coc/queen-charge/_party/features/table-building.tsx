@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import { addBuilding, getLayoutSelected, getModeLayoutBuilder, toggleModeBuilder } from '../state/layout-collection-slice';
-import { DataBuildings } from '../types';
+import { DataBuilding, DataBuildings } from '../types';
 
 import { Table, TableCell, TableHead, TableHeader, TableRow, TableBody } from '@/components/ui/table';
 import dataBuildingJson from '../data/data-building.json';
@@ -11,7 +11,11 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 
-export function TableBuilding() {
+export type TableBuildingProps = {
+    onAddBuilding?: OnAddBuildingFn;
+};
+
+export function TableBuilding({ onAddBuilding }: TableBuildingProps) {
     const dataBuildings = useMemo(() => dataBuildingJson, []);
     const layoutActiveSelected = useAppSelector(getLayoutSelected);
     const modeLayoutBuilder = useAppSelector(getModeLayoutBuilder);
@@ -23,6 +27,7 @@ export function TableBuilding() {
                 <ActualTableBuilding
                     dataBuildings={dataBuildings}
                     layoutActiveSelected={layoutActiveSelected}
+                    onAddBuilding={onAddBuilding}
                 />
             ) : modeLayoutBuilder === 'wall' ? (
                 <div className="h-[50vh] overflow-y-auto">
@@ -56,7 +61,15 @@ function ToggleModeBuilder() {
     );
 }
 
-function ActualTableBuilding({ dataBuildings, layoutActiveSelected }: { dataBuildings: DataBuildings; layoutActiveSelected: string | null }) {
+export type OnAddBuildingFn = (building: DataBuilding) => void;
+
+type ActualTableBuildingProps = {
+    dataBuildings: DataBuildings;
+    layoutActiveSelected: string | null;
+    onAddBuilding?: OnAddBuildingFn;
+};
+
+function ActualTableBuilding({ dataBuildings, layoutActiveSelected, onAddBuilding }: ActualTableBuildingProps) {
     const dispatch = useAppDispatch();
     const [textSearch, setTextSearch] = useState('');
     const dataBuildingsFiltered = dataBuildings.filter((d) => {
@@ -74,7 +87,7 @@ function ActualTableBuilding({ dataBuildings, layoutActiveSelected }: { dataBuil
                     Search Building
                 </Label>
                 <Input
-                    className="h-7 text-xs dark:bg-[#161618] bg-[#f6f6f7]"
+                    className="h-7 text-base dark:bg-[#161618] bg-[#f6f6f7]"
                     type="search"
                     id="search-building"
                     placeholder="Search building coc..."
@@ -100,6 +113,10 @@ function ActualTableBuilding({ dataBuildings, layoutActiveSelected }: { dataBuil
                                     key={building.entityId}
                                     className="select-none cursor-pointer [&>td]:p-1"
                                     onClick={() => {
+                                        if (onAddBuilding instanceof Function) {
+                                            onAddBuilding(building);
+                                            return;
+                                        }
                                         if (!layoutActiveSelected) {
                                             alert('you mush select layout to edit buildings');
                                             return;

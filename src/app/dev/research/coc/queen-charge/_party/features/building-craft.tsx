@@ -22,7 +22,7 @@ import type { BuildingOnBoard, CustomBoardBuildingCSS } from '../types';
 import { CoordinateGuide } from '../components/coordinate-guide';
 import { BoardCanvasGuide } from '../components/board-canvas-guide';
 import { TableLayoutCollection } from './table-layout-collection';
-import { TableBuilding } from './table-building';
+import { type OnAddBuildingFn, TableBuilding } from './table-building';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
@@ -229,7 +229,7 @@ function BoardBuildingChild({ containerRef, layoutIdSelected, building, classNam
     );
 }
 
-function BoardWall({ className, style, ...props }: Omit<ComponentPropsWithoutRef<'div'>, 'children'>) {
+export function BoardWall({ className, style, ...props }: Omit<ComponentPropsWithoutRef<'div'>, 'children'>) {
     const boardRef = useRef<HTMLDivElement>(null);
 
     const dataBuildingWall = useMemo(() => dataBuildingJson.find((building) => building.slug === 'wall'), []);
@@ -293,16 +293,24 @@ function BoardWall({ className, style, ...props }: Omit<ComponentPropsWithoutRef
     );
 }
 
-function RightSideBar() {
+export type RightSideBarProps = {
+    onAddBuilding?: OnAddBuildingFn;
+};
+
+export function RightSideBar({ onAddBuilding }: RightSideBarProps) {
     return (
         <div className="space-y-2">
             <h1 className="font-bold text-xl mb-4">Building Craft</h1>
-            <AccordionDemo />
+            <AccordionDemo onAddBuilding={onAddBuilding} />
         </div>
     );
 }
 
-function AccordionDemo() {
+type AccordionDemoProps = {
+    onAddBuilding?: OnAddBuildingFn;
+};
+
+function AccordionDemo({ onAddBuilding }: AccordionDemoProps) {
     return (
         <Accordion
             type="multiple"
@@ -317,7 +325,7 @@ function AccordionDemo() {
             <AccordionItem value="item-2">
                 <AccordionTrigger className="[&>svg]:text-foreground">Building</AccordionTrigger>
                 <AccordionContent className="dark:bg-[#21242b] bg-[#f4f5f7] px-2 py-4 rounded-lg">
-                    <TableBuilding />
+                    <TableBuilding onAddBuilding={onAddBuilding} />
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

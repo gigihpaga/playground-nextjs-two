@@ -15,6 +15,7 @@ import {
     gitCommitTopicCollectionReducer,
     type CommitTopicCollectionState,
 } from '@/app/dev/research/git/commit-topic/_party/state/commit-topic-collection-slice';
+import { carxGrindingReducer, type CarxGrindingState } from '@/app/dev/research/carx/grinding/_party/state/carx-grinding-slice';
 
 /**
  * persist article
@@ -66,6 +67,16 @@ const gitCommitTopicCollectionConfig: PersistConfig<CommitTopicCollectionState> 
     version: 1,
 };
 
+const carxGrindingConfig: PersistConfig<CarxGrindingState> = {
+    key: 'carxGrinding',
+    whitelist: ['club', 'historyQuestClub', 'dailyQuestIncome', 'wallet'],
+    storage: indexedDBStorage({ name: 'carx-grinding', storeName: 'keyval' }),
+    serialize: false,
+    // @ts-ignore
+    deserialize: false,
+    version: 1,
+};
+
 export const rootReducer = combineReducers({
     pwuPost: persistReducer(pwuPostPersistConfig, pwuPostReducer),
     // pwuPost: pwuPostReducer,
@@ -80,4 +91,6 @@ export const rootReducer = combineReducers({
 
     // gitCommitTopicCollection: gitCommitTopicCollectionReducer,
     gitCommitTopicCollection: persistReducer(gitCommitTopicCollectionConfig, gitCommitTopicCollectionReducer),
+
+    carxGrinding: persistReducer(carxGrindingConfig, carxGrindingReducer),
 });

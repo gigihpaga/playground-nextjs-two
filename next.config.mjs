@@ -11,7 +11,29 @@ const nextConfig = {
         return config;
     },
     compiler: {
-        removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error'] } : false,
+        // removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error'] } : false,
+    },
+    async headers() {
+        return [
+            {
+                source: '/images/coc-building/:path*', // Cache untuk folder coc-building
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=604800, must-revalidate', // cache 1 minggu (public, max-age=60, must-revalidate adalah default nextjs, selain dari "must-revalidate" ada "immutable" (immutable artinya cache yang lebih extream))
+                    },
+                ],
+            },
+            {
+                source: '/images/coc-lab/:path*', // Cache untuk folder coc-lab
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=604800, must-revalidate',
+                    },
+                ],
+            },
+        ];
     },
 };
 const withContentlayer = createContentlayerPlugin({

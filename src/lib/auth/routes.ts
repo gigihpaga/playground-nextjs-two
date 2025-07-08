@@ -9,6 +9,7 @@ export const publicRoutes: string[] = [
     '/blog',
     '/api/testing',
     '/api/token',
+    '/app/fireball-simulation',
 ];
 
 export const authRoutes = {

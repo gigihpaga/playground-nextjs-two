@@ -135,6 +135,7 @@
         "react-resizable-panels": "^2.0.19",
         "react-use": "^17.5.1",
         "react-vis-timeline": "^2.0.3",
+        "react-zoom-pan-pinch": "^3.7.0",
         "redux-persist": "^6.0.0",
         "reinvented-color-wheel": "^0.4.0",
         "resend": "^3.3.0",

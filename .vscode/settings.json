@@ -86,6 +86,11 @@
                     "description": "component scope"
                 },
                 {
+                    "label": "layout",
+                    "value": "layout",
+                    "description": "layout scope"
+                },
+                {
                     "label": "format",
                     "value": "format",
                     "description": "format scope"

@@ -34,6 +34,7 @@ import { cn } from '@/lib/classnames';
 import { useServerActionQuery } from '@/hooks/use-server-action-query';
 
 import { getPagakage, type PakageInFile } from '../action/package-from-file';
+import { isObjectWithId } from '../utils';
 
 import { updateTopic, reorderTopic, getAllTopics, type Topic, type WorkspaceTopic, getTopic } from '../state/commit-topic-collection-slice';
 
@@ -57,6 +58,7 @@ import {
     type Row,
     type ColumnDef,
     type DataTableInstance,
+    type RowData,
 } from '@/components/ui/custom/data-table';
 import { ButtonTips } from '../components/button-tips';
 // import { DrawerPackage } from './drawer-package';
@@ -403,7 +405,7 @@ function TableTopicCollection({ data, colums }: { data: Topic[]; colums: ColumnD
 function DataTableViewCustom<TData, TValue>({ table, columns, className, ...props }: DataTableViewProps<TData, TValue>) {
     const dataIds = React.useMemo(() => {
         return table.options.data.map((data) => {
-            if (!(data !== null && typeof data === 'object' && 'id' in data && typeof data.id === 'string')) {
+            if (!isObjectWithId(data)) {
                 throw new Error('data must be a object, data must be have properti id and data.id must be type string');
             }
 
@@ -445,7 +447,7 @@ function DataTableViewCustom<TData, TValue>({ table, columns, className, ...prop
                         table.getRowModel().rows.map((row) => (
                             <RowDraggable
                                 key={row.id}
-                                row={row as Row<Topic>}
+                                row={row}
                             />
                         ))
                     ) : (
@@ -571,9 +573,9 @@ const RowDragHandleCell = ({ rowId }: { rowId: string }) => {
 };
 
 // Row Component (for table body)
-const RowDraggable = ({ row }: { row: Row<Topic> }) => {
+const RowDraggable = <TData extends RowData>({ row }: { row: Row<TData> }) => {
     const { transform, transition, setNodeRef, isDragging } = useSortable({
-        id: row.original.id,
+        id: isObjectWithId(row.original) ? row.original.id : row.id,
     });
 
     const style: CSSProperties = {

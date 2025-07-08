@@ -96,14 +96,14 @@ const cocLayoutCollectionSlice = createSlice({
                     state.layoutState[layoutIndex].buildingOnBoard.push(building);
                 }
             },
-            prepare: (p: { layoutId: LayoutCollection['layoutId']; building: DataBuilding }) => {
+            prepare: (p: { layoutId: LayoutCollection['layoutId']; building: DataBuilding; position?: BuildingOnBoard['position'] }) => {
                 const newBuilding = {
                     layoutId: p.layoutId,
                     building: {
                         ...p.building,
                         onBoardId: 'BL_' + nanoid(),
                         isDestructive: false,
-                        position: { x: 0, y: 0 },
+                        position: p.position ?? { x: 0, y: 0 },
                     },
                 } satisfies PayloadAddBuilding as PayloadAddBuilding;
 
@@ -153,8 +153,7 @@ const cocLayoutCollectionSlice = createSlice({
             if (layoutIndex !== -1) {
                 const buildingOnBoardIndex = state.layoutState[layoutIndex].buildingOnBoard.findIndex((bob) => bob.onBoardId === onBoardId);
                 if (buildingOnBoardIndex !== -1) {
-                    const newOnBoard = state.layoutState[layoutIndex].buildingOnBoard.filter((bob) => bob.onBoardId !== onBoardId);
-                    state.layoutState[layoutIndex].buildingOnBoard = newOnBoard;
+                    state.layoutState[layoutIndex].buildingOnBoard.splice(buildingOnBoardIndex, 1);
                 }
             }
         },

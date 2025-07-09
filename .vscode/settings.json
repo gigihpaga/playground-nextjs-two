@@ -76,6 +76,11 @@
                     "description": "empty scope"
                 },
                 {
+                    "label": "build",
+                    "value": "build",
+                    "description": "build scope"
+                },
+                {
                     "label": "dev-research",
                     "value": "dev-research",
                     "description": "dev-research scope"

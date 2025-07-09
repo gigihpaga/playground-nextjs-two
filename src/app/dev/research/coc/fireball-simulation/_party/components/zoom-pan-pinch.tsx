@@ -28,7 +28,6 @@ import {
     // ZoomPanPinch,
     ReactZoomPanPinchContext,
     useTransformInit,
-    handleCalculateZoomPositions,
     ReactZoomPanPinchContextState,
 } from 'react-zoom-pan-pinch';
 import { cn } from '@/lib/classnames';

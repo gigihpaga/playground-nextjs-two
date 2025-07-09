@@ -13,7 +13,6 @@ import {
     useTransformContext,
     useTransformEffect,
     useTransformInit,
-    handleCalculateZoomPositions,
     ReactZoomPanPinchContextState,
     AnimationType,
 

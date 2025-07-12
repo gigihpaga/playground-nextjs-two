@@ -15,13 +15,18 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
+    NavigationMenuViewport,
 } from '@/components/ui/navigation-menu';
 import { Button } from '@/components/ui/button';
 import { SheetTutorial } from './sheet-tutorial';
 
-export function NavigationMenuTop() {
+export type NavigationMenuTopProps = {
+    className?: string;
+};
+
+export function NavigationMenuTop({ className }: NavigationMenuTopProps) {
     return (
-        <NavigationMenu className="hidden md:block">
+        <NavigationMenu className={cn('hidden md:block', className)}>
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
@@ -96,6 +101,7 @@ export function NavigationMenuTop() {
                     />
                 </NavigationMenuItem>
             </NavigationMenuList>
+            <NavigationMenuViewport classNameWrapper="w-max" />
         </NavigationMenu>
     );
 }

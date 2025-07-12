@@ -4,29 +4,38 @@ import { useRouter } from 'next/navigation';
 
 import { logout } from '@/server/auth/logout';
 import { authRoutes } from '@/lib/auth/routes';
+import { cn } from '@/lib/classnames';
 
-import { Button } from '@/components/ui/button';
+import { Button, ButtonProps } from '@/components/ui/button';
 
-export function ButtonLogin() {
+export type ButtonLoginProps = Omit<ButtonProps, 'onClick'>;
+
+export function ButtonLogin({ size = 'sm', className, children, ...props }: ButtonLoginProps) {
     const router = useRouter();
     return (
         <Button
-            size="sm"
+            {...props}
+            size={size}
+            className={cn(className)}
             onClick={() => router.push(authRoutes.login)}
         >
-            login
+            {children ? children : 'login'}
         </Button>
     );
 }
 
-export function ButtonLogout() {
+export type ButtonLogoutProps = Omit<ButtonProps, 'onClick'>;
+
+export function ButtonLogout({ size = 'sm', className, children, ...props }: ButtonLogoutProps) {
     const router = useRouter();
     return (
         <Button
-            size="sm"
+            {...props}
+            size={size}
+            className={cn(className)}
             onClick={async () => await logout()}
         >
-            logout
+            {children ? children : 'logout'}
         </Button>
     );
 }

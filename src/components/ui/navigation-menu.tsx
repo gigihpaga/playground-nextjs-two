@@ -15,7 +15,6 @@ const NavigationMenu = React.forwardRef<
         {...props}
     >
         {children}
-        <NavigationMenuViewport />
     </NavigationMenuPrimitive.Root>
 ));
 NavigationMenu.displayName = NavigationMenuPrimitive.Root.displayName;
@@ -75,9 +74,9 @@ const NavigationMenuLink = NavigationMenuPrimitive.Link;
 
 const NavigationMenuViewport = React.forwardRef<
     React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
-    React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
->(({ className, ...props }, ref) => (
-    <div className={cn('absolute left-0 top-full flex justify-center perspective-[2000px] w-full')}>
+    React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport> & { classNameWrapper?: string }
+>(({ className, classNameWrapper, ...props }, ref) => (
+    <div className={cn('absolute left-0 top-full flex justify-center perspective-[2000px] w-full', classNameWrapper)}>
         <NavigationMenuPrimitive.Viewport
             className={cn(
                 'origin-[top_center] relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow data-[state=open]:animate-scaleIn data-[state=closed]:animate-scaleOut duration-300 transition-[width,_height] md:w-[var(--radix-navigation-menu-viewport-width)]',

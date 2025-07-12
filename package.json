@@ -3,11 +3,12 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "concurrently \"npm:cli:dev\" \"npm:next:dev\"",
+        "dev": "npm run prebuild && concurrently \"npm:cli:dev\" \"npm:next:dev\"",
         "cli:dev": "tsx watch cli/index.ts --tsconfig tsconfig.json --clear-screen=true",
         "_cli:dev": "node --require tsx/cjs --watch cli/index.ts cli/index.mts --clear-screen=true",
         "next:dev": "next dev",
         "clean": "rimraf --glob .next",
+        "prebuild": "tsx scripts/index.mjs",
         "build": "next build",
         "build:docs": "npx contentlayer build",
         "build:sitemap": "next-sitemap",

@@ -58,3 +58,6 @@ public/sitemap*.xml
 
 # qodo
 /.qodo/
+
+# generated
+/src/generated

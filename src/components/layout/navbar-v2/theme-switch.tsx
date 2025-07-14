@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { DesktopIcon, MoonIcon, SunIcon, CheckIcon } from '@radix-ui/react-icons';
 import { Button, ButtonProps } from '@/components/ui/button';
 import { cn } from '@/lib/classnames';
+import { useSyncMetaThemeColor } from '@/hooks/use-sync-meta-theme-color';
 
 type Theme = 'dark' | 'light' | 'system';
 
@@ -20,6 +21,8 @@ export type ThemeSwitchProps = Omit<ButtonProps, 'children' | 'onClick'>;
 export function ThemeSwitch({ className, size = 'sm', variant = 'outline', ...props }: ThemeSwitchProps) {
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
+
+    useSyncMetaThemeColor();
 
     useEffect(() => {
         setMounted(true);

@@ -1,4 +1,5 @@
 import { createContentlayerPlugin } from 'next-contentlayer';
+import createPWAPlugin from '@ducanh2912/next-pwa';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
@@ -40,4 +41,19 @@ const withContentlayer = createContentlayerPlugin({
     // Additional Contentlayer config options
 });
 
-export default withContentlayer({ ...nextConfig });
+const withPWA = createPWAPlugin({
+    dest: 'public',
+    cacheOnFrontEndNav: false,
+    aggressiveFrontEndNavCaching: false,
+    reloadOnOnline: true,
+    disable: false, // process.env.NODE_ENV === 'development'
+    workboxOptions: {
+        disableDevLogs: false,
+    },
+    register: true,
+    // skipWaiting: true,
+});
+
+const nextWithPlugins = withContentlayer(withPWA({ ...nextConfig }));
+
+export default nextWithPlugins;

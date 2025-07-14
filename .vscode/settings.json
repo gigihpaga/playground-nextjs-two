@@ -96,6 +96,11 @@
                     "description": "layout scope"
                 },
                 {
+                    "label": "assets",
+                    "value": "assets",
+                    "description": "assets scope"
+                },
+                {
                     "label": "format",
                     "value": "format",
                     "description": "format scope"
